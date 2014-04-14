@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Grammar of Graphics | Introduction to R</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="idocs">
+        <meta name="description" content="These are notes for an introductory R workshop I am teaching for Python Programmers.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../visualize/interactive.html" />
+        
+        
+        <link rel="prev" href="../visualize/base_graphics.html" />
+        
+
+        <meta property="og:title" content="Grammar of Graphics | Introduction to R">
+        <meta property="og:site_name" content="Introduction to R">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/idocs">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="idocs/test1" data-level="3.2" data-basepath=".." data-revision="1397510917583">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/idocs/test1" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/idocs/test1/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/idocs/test1/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Introduction to R</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/idocs" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/edit/master/visualize/ggplot2.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="learn/README.html">
+                
+                <a href="../learn/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Introduction to R
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="learn/structures.html">
+                            
+                            <a href="../learn/structures.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> Data Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="learn/subsetting.html">
+                            
+                            <a href="../learn/subsetting.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> Subsetting
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="learn/controls.html">
+                            
+                            <a href="../learn/controls.html">
+                                <i class="fa fa-check"></i> <b>1.3.</b> Control Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4" data-path="learn/functions.html">
+                            
+                            <a href="../learn/functions.html">
+                                <i class="fa fa-check"></i> <b>1.4.</b> Functions
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5" data-path="learn/vectorization.html">
+                            
+                            <a href="../learn/vectorization.html">
+                                <i class="fa fa-check"></i> <b>1.5.</b> Vectorization
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="explore/README.html">
+                
+                <a href="../explore/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> Data Wrangling
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="explore/tidy.html">
+                            
+                            <a href="../explore/tidy.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> Tidy Data
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="explore/reshape.html">
+                            
+                            <a href="../explore/reshape.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> Reshape
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="explore/summarize.html">
+                            
+                            <a href="../explore/summarize.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> Summarize
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="explore/sac.html">
+                            
+                            <a href="../explore/sac.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> Split Apply Combine
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.5" data-path="explore/sac2.html">
+                            
+                            <a href="../explore/sac2.html">
+                                <i class="fa fa-check"></i> <b>2.5.</b> Split Apply Combine 2
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="visualize/README.html">
+                
+                <a href="../visualize/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> Data Visualization
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="visualize/base_graphics.html">
+                            
+                            <a href="../visualize/base_graphics.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Base Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="visualize/ggplot2.html">
+                            
+                            <a href="../visualize/ggplot2.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Grammar of Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="visualize/interactive.html">
+                            
+                            <a href="../visualize/interactive.html">
+                                <i class="fa fa-check"></i> <b>3.3.</b> Interactive Graphics
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 93.75%;min-width: 87.5%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../learn/README.html" title="Introduction to R" class="chapter done new-chapter" data-progress="1" style="left: 6.25%;"></a>
+    
+        <a href="../learn/structures.html" title="Data Structures" class="chapter done " data-progress="1.1" style="left: 12.5%;"></a>
+    
+        <a href="../learn/subsetting.html" title="Subsetting" class="chapter done " data-progress="1.2" style="left: 18.75%;"></a>
+    
+        <a href="../learn/controls.html" title="Control Structures" class="chapter done " data-progress="1.3" style="left: 25%;"></a>
+    
+        <a href="../learn/functions.html" title="Functions" class="chapter done " data-progress="1.4" style="left: 31.25%;"></a>
+    
+        <a href="../learn/vectorization.html" title="Vectorization" class="chapter done " data-progress="1.5" style="left: 37.5%;"></a>
+    
+        <a href="../explore/README.html" title="Data Wrangling" class="chapter done new-chapter" data-progress="2" style="left: 43.75%;"></a>
+    
+        <a href="../explore/tidy.html" title="Tidy Data" class="chapter done " data-progress="2.1" style="left: 50%;"></a>
+    
+        <a href="../explore/reshape.html" title="Reshape" class="chapter done " data-progress="2.2" style="left: 56.25%;"></a>
+    
+        <a href="../explore/summarize.html" title="Summarize" class="chapter done " data-progress="2.3" style="left: 62.5%;"></a>
+    
+        <a href="../explore/sac.html" title="Split Apply Combine" class="chapter done " data-progress="2.4" style="left: 68.75%;"></a>
+    
+        <a href="../explore/sac2.html" title="Split Apply Combine 2" class="chapter done " data-progress="2.5" style="left: 75%;"></a>
+    
+        <a href="../visualize/README.html" title="Data Visualization" class="chapter done new-chapter" data-progress="3" style="left: 81.25%;"></a>
+    
+        <a href="../visualize/base_graphics.html" title="Base Graphics" class="chapter done " data-progress="3.1" style="left: 87.5%;"></a>
+    
+        <a href="../visualize/ggplot2.html" title="Grammar of Graphics" class="chapter done " data-progress="3.2" style="left: 93.75%;"></a>
+    
+        <a href="../visualize/interactive.html" title="Interactive Graphics" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_20">
+                    
+                        <h1 id="grammar-of-graphics">Grammar of Graphics</h1>
+<p>In this lesson, you will learn about the grammar of graphics, and how its implementation in the <code>ggplot2</code> package provides you with the flexibility to create a wide variety of sophisticated visualizations with little code.</p>
+<p>We have used <code>ggplot2</code> before when we were analyzing the  <code>bnames</code> data. Just to recap, let me create a simple scatterplot plot of <code>tip</code> vs <code>total_bill</code> from the dataset <code>tips</code> found in the <code>reshape2</code> package</p>
+<pre><code class="lang-r">data(tips, package = <span class="hljs-string">'reshape2'</span>)
+<span class="hljs-keyword">library</span>(ggplot2)
+qplot(total_bill, tip, data = tips, geom = <span class="hljs-string">"point"</span>)
+</code></pre>
+<p><img src="figure/uempmed1.png" title="plot of chunk uempmed1" alt="plot of chunk uempmed1" style="display: block; margin: auto;" /></p>
+<p>The <code>qplot</code> function pretty much works like a drop-in-replacement for the <code>plot</code> function in base R. But using it just as a replacement is gross injustice to <code>ggplot2</code> which is capable of doing so much more. </p>
+<p>So if there is one advice I could give you about learning <code>ggplot2</code>, it would be to stop reading examples using <code>qplot</code> because it gives you the false impression that you have mastered the grammar, when in fact you have not. <code>qplot</code> provides some nice syntactic sugar, but is not the real deal.</p>
+<p>So, what is the <strong>grammar of graphics</strong>? Rather than describing the theory behind the grammar, let me explain it by deconstructing the plot you see below.</p>
+<pre><code class="lang-r">myplot &lt;- ggplot(tips, aes(x = total_bill, y = tip)) +
+  geom_point(aes(color = sex)) +
+  geom_smooth(method = <span class="hljs-string">'lm'</span>)
+</code></pre>
+<p>I want to focus your attention on two sets of elements in this plot</p>
+<p><strong>Aesthetics</strong></p>
+<p>First, let us focus on the variables <code>tip</code>, <code>total_bill</code> and <code>sex</code>. You can see from the plot that we have mapped <code>total_bill</code> to <code>x</code>, <code>tip</code> to <code>y</code> and the color of the point to <code>sex</code>. These graphical properties <code>x</code>, <code>y</code> and <code>sex</code> that encode the data on the plot are referred to as <code>aesthetics</code>. Some other aesthetics to consider are <code>size</code>, <code>shape</code> etc.</p>
+<p><strong>Geometries</strong></p>
+<p>The second element to focus on are the visual elements you can see in the plot itself. I see three distinct visual elements in this plot.</p>
+<ul>
+<li>point</li>
+<li>line</li>
+<li>ribbon</li>
+</ul>
+<p>These actual graphical elements displayed in a plot are referred to as <code>geometries</code>. Some other <code>geometries</code> you might be familiar with are <code>area</code>, <code>bar</code>, <code>text</code>.</p>
+<p>Another very useful way of thinking about this plot is in terms of <code>layers</code>. You can think of a <code>layer</code> as consisting of <code>data</code>, a <code>mapping</code> of <code>aesthetics</code>, a <code>geometry</code> to visually display, and sometimes additional parameters to customize the display.</p>
+<p>There are three layers in this plot. A <code>point</code> layer, a <code>line</code> layer and a <code>ribbon</code> layer. Let us start by defining the first layer, <code>point_layer</code>. <code>ggplot2</code> allows you to translate the <code>layer</code> exactly as you see it in terms of the constituent elements. The syntax being used might seem very verbose when compared to <code>qplot</code>, but I recommend some patience, since the rewards you reap by understanding the grammar are worth the trouble.</p>
+<pre><code class="lang-r">layer_point &lt;- geom_point(
+  mapping = aes(x = total_bill, y = tip, color = sex),
+  data = tips,
+  size = <span class="hljs-number">3</span>
+)
+ggplot() + layer_point
+</code></pre>
+<p><img src="figure/layer1.png" title="plot of chunk layer1" alt="plot of chunk layer1" style="display: block; margin: auto;" /></p>
+<p>That was easy! Wasn&#39;t it? Let us move on to the second layer. It is a regression line fitted through the points. We know that the <code>x</code> is still mapped to <code>total_bill</code>, but we have to map the <code>y</code> to a fitted value of <code>tip</code> rather than <code>tip</code>. How do we get the fitted value? </p>
+<p>Well, we can use <code>lm</code> followed by <code>predict</code> to compute not only the fitted values, but also a confidence interval around the fitted values which will come in handy later. Note that we combine the <code>total_bill</code> column with the predicted estimates so that we can keep the <code>x</code> and <code>y</code> values in sync.</p>
+<pre><code class="lang-r">model &lt;- lm(tip ~ total_bill, data = tips)
+fitted_tips &lt;- data.frame(
+  total_bill = tips$total_bill, 
+  predict(model, interval = <span class="hljs-string">"confidence"</span>)
+)
+head(fitted_tips)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   total_bill   fit   lwr   upr</span>
+<span class="hljs-preprocessor">## 1      16.99 2.705 2.570 2.840</span>
+<span class="hljs-preprocessor">## 2      10.34 2.006 1.818 2.194</span>
+<span class="hljs-preprocessor">## 3      21.01 3.127 2.997 3.257</span>
+<span class="hljs-preprocessor">## 4      23.68 3.407 3.267 3.548</span>
+<span class="hljs-preprocessor">## 5      24.59 3.503 3.356 3.649</span>
+<span class="hljs-preprocessor">## 6      25.29 3.576 3.425 3.728</span>
+</code></pre><p>Now it is time to define our second layer, since we have the data required to do so.</p>
+<pre><code class="lang-r">layer_line &lt;- geom_line(
+  mapping = aes(x = total_bill, y = fit),
+  data = fitted_tips,
+  color = <span class="hljs-string">"darkred"</span>
+)
+ggplot() + layer_point + layer_line
+</code></pre>
+<p><img src="figure/layer2.png" title="plot of chunk layer2" alt="plot of chunk layer2" style="display: block; margin: auto;" /></p>
+<p>That was fun right! Now, let me see if you have been able to grasp the idea of the grammar. How would you go about adding the ribbon layer that adds a confidence interval around the line? What about if you were asked to add a prediction interval?</p>
+<p><strong>Exercise 1</strong></p>
+<p>Let me give you a hint. You need to use a <code>ribbon</code> geometry, which requires two values of <code>y</code> corresponding to the lower and upper limits of the interval. You can type <code>?geom_ribbon</code> to see the names of these <code>aesthetics</code> so that you can provide them correctly in the <code>mapping</code> argument.</p>
+<p><strong>Solution 1</strong></p>
+<pre><code class="lang-r">layer_ribbon &lt;- geom_ribbon(
+  mapping = aes(x = total_bill, ymin = lwr, ymax = upr),
+  data = fitted_tips,
+  alpha = <span class="hljs-number">0.3</span>
+)
+ggplot() + layer_point + layer_line + layer_ribbon
+</code></pre>
+<p><img src="figure/layer3.png" title="plot of chunk layer3" alt="plot of chunk layer3" style="display: block; margin: auto;" /></p>
+<p>While the approach we took to create this plot was very logical and followed the grammar, it is still verbose, especially since such plots are very common in statistical applications. So is there a way to make this simpler?</p>
+<p>Fortunately, both the grammar of graphics and its implementation in <code>ggplot2</code> are flexible enought to define higher order layers that automatically run some <code>statistical</code> transformations on the data. In <code>ggplot2</code>, there is <code>geom_smooth</code>, which accepts a smoothing method as input, and automatically does the statistical transformations in the background. So, we can define the combined line and ribbon layers as</p>
+<pre><code class="lang-r">layer_smooth &lt;- geom_smooth(
+  mapping = aes(x = total_bill, y = tip),
+  data = tips,
+  method = <span class="hljs-string">'lm'</span>
+)
+ggplot() + layer_point + layer_smooth
+</code></pre>
+<p><img src="figure/layer4.png" title="plot of chunk layer4" alt="plot of chunk layer4" style="display: block; margin: auto;" /></p>
+<p>That was better wasn&#39;t it. But wait a minute, there is still a lot of repitition in this code, and repetition is never good. The <code>x</code> and <code>y</code> aesthetics in <code>mapping</code> and the <code>data</code> argument are common to both <code>layer_point</code> and <code>layer_smooth</code>. How do we remove this duplication?</p>
+<p>All you need to do is to move the <code>data</code> and <code>mapping</code> definitions to the <code>ggplot</code> base layer and all other layers automatically inherit this information, if not specified explicitly. Once again kudos to Hadley for thinking throught this.</p>
+<pre><code class="lang-r">ggplot(tips, aes(x = total_bill, y = tip)) +
+  geom_point(aes(color = sex)) +
+  geom_smooth(method = <span class="hljs-string">'lm'</span>)
+</code></pre>
+<p><img src="figure/layer5.png" title="plot of chunk layer5" alt="plot of chunk layer5" style="display: block; margin: auto;" /></p>
+<p>Question: What would happen if you moved the <code>color</code> aesthetic to the <code>ggplot</code> layer? Reason it out before proceeding to running the code.</p>
+<p><a href="javascript:expandcollapse('solution1')">
+   [+/-] Solution
+</a><br></p>
+<p><span class='posthidden' id='solution1'>
+The <code>smooth</code> layer will inherit the <code>color</code> aesthetic as well as a result of which you will see two regression lines fitted, one for each sex.
+</span></p>
+<style>
+  .posthidden {display:none} 
+  .postshown {display:inline}
+</style>
+
+<script type="text/Javascript"> 
+
+  function expandcollapse (postid) { 
+    whichpost = document.getElementById(postid); 
+
+     if (whichpost.className=="postshown") { 
+      whichpost.className="posthidden"; 
+     } 
+     else { 
+      whichpost.className="postshown"; 
+     } 
+  } 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../visualize/base_graphics.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../visualize/interactive.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

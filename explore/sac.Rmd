@@ -1,0 +1,155 @@
+# Split-Apply-Combine: I
+
+The split-apply-combine paradigm can be concisely summarized using the diagram below (thanks hadley!)
+
+<img src=http://inundata.org/R_talks/meetup/images/splitapply.png width=75%></img>
+
+Base R has several functions that make this easy. Let us start by revisiting __Exercise 3__ from the previous lesson. This time, we will use the base function `aggregate` to carry out the computations. We use the formula interface provided by `aggregate`.
+
+```{r}
+bnames2_b = mutate(bnames2_b, tot = prop * births)
+result <- aggregate(
+  formula = tot ~ name, 
+  data = bnames2_b, 
+  FUN = sum
+)
+```
+
+__Exercise 1__
+
+What is the most popular `name` by `gender` between the years 2000 to 2008? (Hint: The `aggregate` function accepts a `subset` argument!) Once again, enter your guesses on Etherpad before starting out!
+
+__Solution 1__
+
+```{r}
+result2 <- aggregate(
+  formula = tot ~ name + sex,
+  data = bnames2_b,
+  FUN = sum,
+  subset = (year >= 2000)
+)
+most_pop_boy <- arrange(subset(result2, sex == "boy"), desc(tot))[1,"name"]
+most_pop_girl <- arrange(subset(result2, sex == "girl"), desc(tot))[1,"name"]
+```
+
+<a href="javascript:expandcollapse('solution1')">
+   [+/-] Solution
+</a><br>
+
+<span class='posthidden' id='solution1'>
+The most popular names between 2000 and 2008 are __`r most_pop_boy`__ and __`r most_pop_girl`__
+</span>
+
+
+So far, we have seen `split-apply-combine` applied in the context of data frames. However, you can think of similar problems for other data structures. Here are some examples.
+
+1. Extract components by name from a `list`.
+2. Compute the mean across rows/columns of a `matrix`.
+3. Apply a `function` across multiple sets of arguments.
+
+Base R has a family of functions, popularly referred to as the `apply` family to carry out such operations. 
+
+__apply__
+
+`apply` applies a function to each row or column of a matrix.
+
+```{r, eval = TRUE}
+m <- matrix(c(1:10, 11:20), nrow = 10, ncol = 2)
+# 1 is the row index
+# 2 is the column index
+apply(m, 1, sum)
+apply(m, 2, sum)
+apply(m, 1, mean)
+apply(m, 2, mean)
+```
+
+__lapply__
+
+
+`lapply` applies a function to each element of a list
+
+
+```{r}
+my_list <- list(a = 1:10, b = 2:20)
+lapply(my_list, mean)
+```
+
+__sapply__
+
+`sapply` is a more user friendly version of `lapply` and will return a list of matrix where appropriate. Let us work with the same list we just created.
+
+```{r, eval = TRUE}
+my_list
+x <- sapply(my_list, mean)
+x
+class(x)
+```
+
+__mapply__
+
+Its more or less a multivariate version of `sapply`. It applies a function to all corresponding elements of each argument. 
+
+```{r}
+list_1 <- list(a = c(1:10), b = c(11:20))
+list_1
+list_2 <- list(c = c(21:30), d = c(31:40))
+list_2
+mapply(sum, list_1$a, list_1$b, list_2$c, list_2$d)
+```
+
+
+__tapply__
+
+`tapply` applies a function to subsets of a vector.
+
+```{r}
+head(warpbreaks)
+with(warpbreaks, tapply(breaks, list(wool, tension), mean))
+```
+
+
+
+__by__
+
+`by` applies a function to subsets of a data frame.
+
+```{r}
+head(iris)
+by(iris[, 1:2], iris[,"Species"], summary)
+by(iris[, 1:2], iris[,"Species"], sum)
+```
+
+
+
+__replicate__
+
+An extremely useful function to generate datasets for simulation purposes. The final arguments turns the result into a vector or matrix if possible.
+
+```{r}
+replicate(10, rnorm(10))
+replicate(10, rnorm(10), simplify = TRUE)
+```
+
+While these functions in Base R get the job done, the inconsistent syntax often trips up users. Over the years, several alternatives have emerged, that aim to provide a simpler and more consistent syntax to operationalize `split-apply-combine`. In the next lesson, we will explore three packages in particular: `plyr`, `data.table` and `dplyr`.
+
+
+<style>
+  .posthidden {display:none} 
+  .postshown {display:inline}
+</style>
+
+<script type="text/Javascript"> 
+
+  function expandcollapse (postid) { 
+    whichpost = document.getElementById(postid); 
+   
+     if (whichpost.className=="postshown") { 
+      whichpost.className="posthidden"; 
+     } 
+     else { 
+      whichpost.className="postshown"; 
+     } 
+  } 
+</script>
+
+

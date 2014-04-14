@@ -1,0 +1,530 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Split Apply Combine | Introduction to R</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="idocs">
+        <meta name="description" content="These are notes for an introductory R workshop I am teaching for Python Programmers.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../explore/sac2.html" />
+        
+        
+        <link rel="prev" href="../explore/summarize.html" />
+        
+
+        <meta property="og:title" content="Split Apply Combine | Introduction to R">
+        <meta property="og:site_name" content="Introduction to R">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/idocs">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="idocs/test1" data-level="2.4" data-basepath=".." data-revision="1397510917583">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/idocs/test1" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/idocs/test1/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/idocs/test1/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Introduction to R</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/idocs" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/edit/master/explore/sac.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="learn/README.html">
+                
+                <a href="../learn/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Introduction to R
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="learn/structures.html">
+                            
+                            <a href="../learn/structures.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> Data Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="learn/subsetting.html">
+                            
+                            <a href="../learn/subsetting.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> Subsetting
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="learn/controls.html">
+                            
+                            <a href="../learn/controls.html">
+                                <i class="fa fa-check"></i> <b>1.3.</b> Control Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4" data-path="learn/functions.html">
+                            
+                            <a href="../learn/functions.html">
+                                <i class="fa fa-check"></i> <b>1.4.</b> Functions
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5" data-path="learn/vectorization.html">
+                            
+                            <a href="../learn/vectorization.html">
+                                <i class="fa fa-check"></i> <b>1.5.</b> Vectorization
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="explore/README.html">
+                
+                <a href="../explore/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> Data Wrangling
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="explore/tidy.html">
+                            
+                            <a href="../explore/tidy.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> Tidy Data
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="explore/reshape.html">
+                            
+                            <a href="../explore/reshape.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> Reshape
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="explore/summarize.html">
+                            
+                            <a href="../explore/summarize.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> Summarize
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="explore/sac.html">
+                            
+                            <a href="../explore/sac.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> Split Apply Combine
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.5" data-path="explore/sac2.html">
+                            
+                            <a href="../explore/sac2.html">
+                                <i class="fa fa-check"></i> <b>2.5.</b> Split Apply Combine 2
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="visualize/README.html">
+                
+                <a href="../visualize/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> Data Visualization
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="visualize/base_graphics.html">
+                            
+                            <a href="../visualize/base_graphics.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Base Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="visualize/ggplot2.html">
+                            
+                            <a href="../visualize/ggplot2.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Grammar of Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="visualize/interactive.html">
+                            
+                            <a href="../visualize/interactive.html">
+                                <i class="fa fa-check"></i> <b>3.3.</b> Interactive Graphics
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 68.75%;min-width: 62.5%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../learn/README.html" title="Introduction to R" class="chapter done new-chapter" data-progress="1" style="left: 6.25%;"></a>
+    
+        <a href="../learn/structures.html" title="Data Structures" class="chapter done " data-progress="1.1" style="left: 12.5%;"></a>
+    
+        <a href="../learn/subsetting.html" title="Subsetting" class="chapter done " data-progress="1.2" style="left: 18.75%;"></a>
+    
+        <a href="../learn/controls.html" title="Control Structures" class="chapter done " data-progress="1.3" style="left: 25%;"></a>
+    
+        <a href="../learn/functions.html" title="Functions" class="chapter done " data-progress="1.4" style="left: 31.25%;"></a>
+    
+        <a href="../learn/vectorization.html" title="Vectorization" class="chapter done " data-progress="1.5" style="left: 37.5%;"></a>
+    
+        <a href="../explore/README.html" title="Data Wrangling" class="chapter done new-chapter" data-progress="2" style="left: 43.75%;"></a>
+    
+        <a href="../explore/tidy.html" title="Tidy Data" class="chapter done " data-progress="2.1" style="left: 50%;"></a>
+    
+        <a href="../explore/reshape.html" title="Reshape" class="chapter done " data-progress="2.2" style="left: 56.25%;"></a>
+    
+        <a href="../explore/summarize.html" title="Summarize" class="chapter done " data-progress="2.3" style="left: 62.5%;"></a>
+    
+        <a href="../explore/sac.html" title="Split Apply Combine" class="chapter done " data-progress="2.4" style="left: 68.75%;"></a>
+    
+        <a href="../explore/sac2.html" title="Split Apply Combine 2" class="chapter  " data-progress="2.5" style="left: 75%;"></a>
+    
+        <a href="../visualize/README.html" title="Data Visualization" class="chapter  new-chapter" data-progress="3" style="left: 81.25%;"></a>
+    
+        <a href="../visualize/base_graphics.html" title="Base Graphics" class="chapter  " data-progress="3.1" style="left: 87.5%;"></a>
+    
+        <a href="../visualize/ggplot2.html" title="Grammar of Graphics" class="chapter  " data-progress="3.2" style="left: 93.75%;"></a>
+    
+        <a href="../visualize/interactive.html" title="Interactive Graphics" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_4">
+                    
+                        <h1 id="split-apply-combine-i">Split-Apply-Combine: I</h1>
+<p>The split-apply-combine paradigm can be concisely summarized using the diagram below (thanks hadley!)</p>
+<p><img src=http://inundata.org/R_talks/meetup/images/splitapply.png width=75%></img></p>
+<p>Base R has several functions that make this easy. Let us start by revisiting <strong>Exercise 3</strong> from the previous lesson. This time, we will use the base function <code>aggregate</code> to carry out the computations. We use the formula interface provided by <code>aggregate</code>.</p>
+<pre><code class="lang-r">bnames2_b = mutate(bnames2_b, tot = prop * births)
+result &lt;- aggregate(formula = tot ~ name, data = bnames2_b, FUN = sum)
+</code></pre>
+<p><strong>Exercise 1</strong></p>
+<p>What is the most popular <code>name</code> by <code>gender</code> between the years 2000 to 2008? (Hint: The <code>aggregate</code> function accepts a <code>subset</code> argument!) Once again, enter your guesses on Etherpad before starting out!</p>
+<p><strong>Solution 1</strong></p>
+<pre><code class="lang-r">result2 &lt;- aggregate(formula = tot ~ name + sex, data = bnames2_b, FUN = sum, 
+    subset = (year &gt;= <span class="hljs-number">2000</span>))
+most_pop_boy &lt;- arrange(subset(result2, sex == <span class="hljs-string">"boy"</span>), desc(tot))[<span class="hljs-number">1</span>, <span class="hljs-string">"name"</span>]
+most_pop_girl &lt;- arrange(subset(result2, sex == <span class="hljs-string">"girl"</span>), desc(tot))[<span class="hljs-number">1</span>, <span class="hljs-string">"name"</span>]
+</code></pre>
+<p><a href="javascript:expandcollapse('solution1')">
+   [+/-] Solution
+</a><br></p>
+<p><span class='posthidden' id='solution1'>
+The most popular names between 2000 and 2008 are <strong>Jacob</strong> and <strong>Emily</strong>
+</span></p>
+<p>So far, we have seen <code>split-apply-combine</code> applied in the context of data frames. However, you can think of similar problems for other data structures. Here are some examples.</p>
+<ol>
+<li>Extract components by name from a <code>list</code>.</li>
+<li>Compute the mean across rows/columns of a <code>matrix</code>.</li>
+<li>Apply a <code>function</code> across multiple sets of arguments.</li>
+</ol>
+<p>Base R has a family of functions, popularly referred to as the <code>apply</code> family to carry out such operations. </p>
+<p><strong>apply</strong></p>
+<p><code>apply</code> applies a function to each row or column of a matrix.</p>
+<pre><code class="lang-r">m &lt;- matrix(c(<span class="hljs-number">1</span>:<span class="hljs-number">10</span>, <span class="hljs-number">11</span>:<span class="hljs-number">20</span>), nrow = <span class="hljs-number">10</span>, ncol = <span class="hljs-number">2</span>)
+<span class="hljs-comment"># 1 is the row index 2 is the column index</span>
+apply(m, <span class="hljs-number">1</span>, sum)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##  [1] 12 14 16 18 20 22 24 26 28 30</span>
+</code></pre><pre><code class="lang-r">apply(m, <span class="hljs-number">2</span>, sum)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1]  55 155</span>
+</code></pre><pre><code class="lang-r">apply(m, <span class="hljs-number">1</span>, mean)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##  [1]  6  7  8  9 10 11 12 13 14 15</span>
+</code></pre><pre><code class="lang-r">apply(m, <span class="hljs-number">2</span>, mean)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1]  5.5 15.5</span>
+</code></pre><p><strong>lapply</strong></p>
+<p><code>lapply</code> applies a function to each element of a list</p>
+<pre><code class="lang-r">my_list &lt;- list(a = <span class="hljs-number">1</span>:<span class="hljs-number">10</span>, b = <span class="hljs-number">2</span>:<span class="hljs-number">20</span>)
+lapply(my_list, mean)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## $a</span>
+<span class="hljs-preprocessor">## [1] 5.5</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $b</span>
+<span class="hljs-preprocessor">## [1] 11</span>
+</code></pre><p><strong>sapply</strong></p>
+<p><code>sapply</code> is a more user friendly version of <code>lapply</code> and will return a list of matrix where appropriate. Let us work with the same list we just created.</p>
+<pre><code class="lang-r">my_list
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## $a</span>
+<span class="hljs-preprocessor">##  [1]  1  2  3  4  5  6  7  8  9 10</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $b</span>
+<span class="hljs-preprocessor">##  [1]  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</span>
+</code></pre><pre><code class="lang-r">x &lt;- sapply(my_list, mean)
+x
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##    a    b </span>
+<span class="hljs-preprocessor">##  5.5 11.0</span>
+</code></pre><pre><code class="lang-r">class(x)
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"numeric"</span>
+</code></pre><p><strong>mapply</strong></p>
+<p>Its more or less a multivariate version of <code>sapply</code>. It applies a function to all corresponding elements of each argument. </p>
+<pre><code class="lang-r">list_1 &lt;- list(a = c(<span class="hljs-number">1</span>:<span class="hljs-number">10</span>), b = c(<span class="hljs-number">11</span>:<span class="hljs-number">20</span>))
+list_1
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## $a</span>
+<span class="hljs-preprocessor">##  [1]  1  2  3  4  5  6  7  8  9 10</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $b</span>
+<span class="hljs-preprocessor">##  [1] 11 12 13 14 15 16 17 18 19 20</span>
+</code></pre><pre><code class="lang-r">list_2 &lt;- list(c = c(<span class="hljs-number">21</span>:<span class="hljs-number">30</span>), d = c(<span class="hljs-number">31</span>:<span class="hljs-number">40</span>))
+list_2
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## $c</span>
+<span class="hljs-preprocessor">##  [1] 21 22 23 24 25 26 27 28 29 30</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $d</span>
+<span class="hljs-preprocessor">##  [1] 31 32 33 34 35 36 37 38 39 40</span>
+</code></pre><pre><code class="lang-r">mapply(sum, list_1$a, list_1$b, list_2$c, list_2$d)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##  [1]  64  68  72  76  80  84  88  92  96 100</span>
+</code></pre><p><strong>tapply</strong></p>
+<p><code>tapply</code> applies a function to subsets of a vector.</p>
+<pre><code class="lang-r">head(warpbreaks)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   breaks wool tension</span>
+<span class="hljs-preprocessor">## 1     26    A       L</span>
+<span class="hljs-preprocessor">## 2     30    A       L</span>
+<span class="hljs-preprocessor">## 3     54    A       L</span>
+<span class="hljs-preprocessor">## 4     25    A       L</span>
+<span class="hljs-preprocessor">## 5     70    A       L</span>
+<span class="hljs-preprocessor">## 6     52    A       L</span>
+</code></pre><pre><code class="lang-r">with(warpbreaks, tapply(breaks, list(wool, tension), mean))
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##       L     M     H</span>
+<span class="hljs-preprocessor">## A 44.56 24.00 24.56</span>
+<span class="hljs-preprocessor">## B 28.22 28.78 18.78</span>
+</code></pre><p><strong>by</strong></p>
+<p><code>by</code> applies a function to subsets of a data frame.</p>
+<pre><code class="lang-r">head(iris)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
+<span class="hljs-preprocessor">## 1          5.1         3.5          1.4         0.2  setosa</span>
+<span class="hljs-preprocessor">## 2          4.9         3.0          1.4         0.2  setosa</span>
+<span class="hljs-preprocessor">## 3          4.7         3.2          1.3         0.2  setosa</span>
+<span class="hljs-preprocessor">## 4          4.6         3.1          1.5         0.2  setosa</span>
+<span class="hljs-preprocessor">## 5          5.0         3.6          1.4         0.2  setosa</span>
+<span class="hljs-preprocessor">## 6          5.4         3.9          1.7         0.4  setosa</span>
+</code></pre><pre><code class="lang-r">by(iris[, <span class="hljs-number">1</span>:<span class="hljs-number">2</span>], iris[, <span class="hljs-string">"Species"</span>], summary)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## iris[, "Species"]: setosa</span>
+<span class="hljs-preprocessor">##   Sepal.Length   Sepal.Width  </span>
+<span class="hljs-preprocessor">##  Min.   :4.30   Min.   :2.30  </span>
+<span class="hljs-preprocessor">##  1st Qu.:4.80   1st Qu.:3.20  </span>
+<span class="hljs-preprocessor">##  Median :5.00   Median :3.40  </span>
+<span class="hljs-preprocessor">##  Mean   :5.01   Mean   :3.43  </span>
+<span class="hljs-preprocessor">##  3rd Qu.:5.20   3rd Qu.:3.67  </span>
+<span class="hljs-preprocessor">##  Max.   :5.80   Max.   :4.40  </span>
+<span class="hljs-preprocessor">## -------------------------------------------------------- </span>
+<span class="hljs-preprocessor">## iris[, "Species"]: versicolor</span>
+<span class="hljs-preprocessor">##   Sepal.Length   Sepal.Width  </span>
+<span class="hljs-preprocessor">##  Min.   :4.90   Min.   :2.00  </span>
+<span class="hljs-preprocessor">##  1st Qu.:5.60   1st Qu.:2.52  </span>
+<span class="hljs-preprocessor">##  Median :5.90   Median :2.80  </span>
+<span class="hljs-preprocessor">##  Mean   :5.94   Mean   :2.77  </span>
+<span class="hljs-preprocessor">##  3rd Qu.:6.30   3rd Qu.:3.00  </span>
+<span class="hljs-preprocessor">##  Max.   :7.00   Max.   :3.40  </span>
+<span class="hljs-preprocessor">## -------------------------------------------------------- </span>
+<span class="hljs-preprocessor">## iris[, "Species"]: virginica</span>
+<span class="hljs-preprocessor">##   Sepal.Length   Sepal.Width  </span>
+<span class="hljs-preprocessor">##  Min.   :4.90   Min.   :2.20  </span>
+<span class="hljs-preprocessor">##  1st Qu.:6.22   1st Qu.:2.80  </span>
+<span class="hljs-preprocessor">##  Median :6.50   Median :3.00  </span>
+<span class="hljs-preprocessor">##  Mean   :6.59   Mean   :2.97  </span>
+<span class="hljs-preprocessor">##  3rd Qu.:6.90   3rd Qu.:3.17  </span>
+<span class="hljs-preprocessor">##  Max.   :7.90   Max.   :3.80</span>
+</code></pre><pre><code class="lang-r">by(iris[, <span class="hljs-number">1</span>:<span class="hljs-number">2</span>], iris[, <span class="hljs-string">"Species"</span>], sum)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## iris[, "Species"]: setosa</span>
+<span class="hljs-preprocessor">## [1] 421.7</span>
+<span class="hljs-preprocessor">## -------------------------------------------------------- </span>
+<span class="hljs-preprocessor">## iris[, "Species"]: versicolor</span>
+<span class="hljs-preprocessor">## [1] 435.3</span>
+<span class="hljs-preprocessor">## -------------------------------------------------------- </span>
+<span class="hljs-preprocessor">## iris[, "Species"]: virginica</span>
+<span class="hljs-preprocessor">## [1] 478.1</span>
+</code></pre><p><strong>replicate</strong></p>
+<p>An extremely useful function to generate datasets for simulation purposes. The final arguments turns the result into a vector or matrix if possible.</p>
+<pre><code class="lang-r">replicate(<span class="hljs-number">10</span>, rnorm(<span class="hljs-number">10</span>))
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##          [,1]       [,2]    [,3]      [,4]     [,5]    [,6]    [,7]</span>
+<span class="hljs-preprocessor">##  [1,] -0.7645  0.3185895 -0.5689 -0.319964  1.49882 -0.1593 -0.5763</span>
+<span class="hljs-preprocessor">##  [2,] -1.4341 -0.6606781  0.1524 -1.198101  0.66228 -2.5825 -1.4917</span>
+<span class="hljs-preprocessor">##  [3,] -0.4506 -1.2797852  0.8286  0.996100  0.85089 -1.4561 -1.8850</span>
+<span class="hljs-preprocessor">##  [4,] -1.1801 -0.4159011 -0.2935  2.993512  0.75832  1.1798 -1.4708</span>
+<span class="hljs-preprocessor">##  [5,]  0.8747  0.2859087  0.3850  0.135864 -0.06600 -1.1847 -0.6427</span>
+<span class="hljs-preprocessor">##  [6,]  0.5061 -1.7811872  0.4246 -0.150876 -0.41276 -1.8907 -1.4703</span>
+<span class="hljs-preprocessor">##  [7,] -1.2202 -0.0261400 -1.2307 -0.002978 -0.05067 -0.8345  0.5299</span>
+<span class="hljs-preprocessor">##  [8,] -1.9122 -0.0492036 -0.2750  1.169480 -0.07576 -0.4210 -0.2340</span>
+<span class="hljs-preprocessor">##  [9,]  0.7003 -0.0005288  0.4755 -1.018941  0.71602 -0.4772  1.0729</span>
+<span class="hljs-preprocessor">## [10,] -0.9529  0.4603188 -0.8582  0.276076  1.89744 -1.4785 -0.8311</span>
+<span class="hljs-preprocessor">##          [,8]     [,9]    [,10]</span>
+<span class="hljs-preprocessor">##  [1,]  1.4185  1.11500  0.69105</span>
+<span class="hljs-preprocessor">##  [2,] -1.0606  0.59550  1.17109</span>
+<span class="hljs-preprocessor">##  [3,] -1.4184  0.03055  0.38472</span>
+<span class="hljs-preprocessor">##  [4,] -0.5362 -0.16319  0.09477</span>
+<span class="hljs-preprocessor">##  [5,] -1.1632  0.23351 -2.82787</span>
+<span class="hljs-preprocessor">##  [6,]  0.6561  1.05047 -0.45404</span>
+<span class="hljs-preprocessor">##  [7,] -1.9730 -0.42788 -0.52041</span>
+<span class="hljs-preprocessor">##  [8,]  0.2142  0.06984 -0.48828</span>
+<span class="hljs-preprocessor">##  [9,] -0.8232  0.18984  1.66038</span>
+<span class="hljs-preprocessor">## [10,] -0.3286 -0.23661 -0.14971</span>
+</code></pre><pre><code class="lang-r">replicate(<span class="hljs-number">10</span>, rnorm(<span class="hljs-number">10</span>), simplify = <span class="hljs-literal">TRUE</span>)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##           [,1]     [,2]     [,3]    [,4]     [,5]     [,6]     [,7]</span>
+<span class="hljs-preprocessor">##  [1,]  1.40054  0.03782  0.78123  0.5410 -1.91830  1.28884  0.13196</span>
+<span class="hljs-preprocessor">##  [2,] -0.48184  0.45810 -1.28727  1.9267  2.04608 -0.44330 -0.68003</span>
+<span class="hljs-preprocessor">##  [3,] -0.70475 -0.03546 -0.87877 -0.6897 -0.17008 -0.03965  0.19166</span>
+<span class="hljs-preprocessor">##  [4,]  0.55422  1.91311 -0.30243  0.6063  0.08633  0.05310  1.73896</span>
+<span class="hljs-preprocessor">##  [5,]  0.07958  1.85288 -0.18641  0.5110  0.43457 -0.66518  3.29714</span>
+<span class="hljs-preprocessor">##  [6,]  1.13159  0.47895 -1.34840 -0.1361 -0.23868  0.80694 -0.58947</span>
+<span class="hljs-preprocessor">##  [7,]  1.50151 -1.70485  0.18591  1.3231  0.02367  0.48548  0.17218</span>
+<span class="hljs-preprocessor">##  [8,] -0.75878  0.25700  0.04495  1.1295 -0.06657 -0.68207 -1.44063</span>
+<span class="hljs-preprocessor">##  [9,]  1.22445 -0.62720  0.61522 -0.6100  0.11585 -0.21544 -0.34115</span>
+<span class="hljs-preprocessor">## [10,] -1.38435  1.02435 -0.37469 -0.4636 -0.07225 -1.53654  0.04528</span>
+<span class="hljs-preprocessor">##           [,8]    [,9]   [,10]</span>
+<span class="hljs-preprocessor">##  [1,] -0.04667  0.1478 -1.5232</span>
+<span class="hljs-preprocessor">##  [2,]  0.13871  0.2219 -0.9314</span>
+<span class="hljs-preprocessor">##  [3,] -0.71036 -0.4076  0.3054</span>
+<span class="hljs-preprocessor">##  [4,] -0.53646 -1.4261  0.4189</span>
+<span class="hljs-preprocessor">##  [5,] -1.44751  1.9548  1.3638</span>
+<span class="hljs-preprocessor">##  [6,] -0.64740 -0.3214 -0.3939</span>
+<span class="hljs-preprocessor">##  [7,] -1.34268  1.3749  0.7859</span>
+<span class="hljs-preprocessor">##  [8,] -0.04138 -0.9589  0.6699</span>
+<span class="hljs-preprocessor">##  [9,]  1.64503  0.9598  1.3884</span>
+<span class="hljs-preprocessor">## [10,] -0.93664  0.4841  0.7852</span>
+</code></pre><p>While these functions in Base R get the job done, the inconsistent syntax often trips up users. Over the years, several alternatives have emerged, that aim to provide a simpler and more consistent syntax to operationalize <code>split-apply-combine</code>. In the next lesson, we will explore three packages in particular: <code>plyr</code>, <code>data.table</code> and <code>dplyr</code>.</p>
+<style>
+  .posthidden {display:none} 
+  .postshown {display:inline}
+</style>
+
+<script type="text/Javascript"> 
+
+  function expandcollapse (postid) { 
+    whichpost = document.getElementById(postid); 
+
+     if (whichpost.className=="postshown") { 
+      whichpost.className="posthidden"; 
+     } 
+     else { 
+      whichpost.className="postshown"; 
+     } 
+  } 
+</script>
+
+
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../explore/summarize.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../explore/sac2.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

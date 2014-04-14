@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Summarize | Introduction to R</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="idocs">
+        <meta name="description" content="These are notes for an introductory R workshop I am teaching for Python Programmers.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../explore/sac.html" />
+        
+        
+        <link rel="prev" href="../explore/reshape.html" />
+        
+
+        <meta property="og:title" content="Summarize | Introduction to R">
+        <meta property="og:site_name" content="Introduction to R">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/idocs">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="idocs/test1" data-level="2.3" data-basepath=".." data-revision="1397510917583">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/idocs/test1" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/idocs/test1/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/idocs/test1/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Introduction to R</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/idocs" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/edit/master/explore/summarize.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="learn/README.html">
+                
+                <a href="../learn/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Introduction to R
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="learn/structures.html">
+                            
+                            <a href="../learn/structures.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> Data Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="learn/subsetting.html">
+                            
+                            <a href="../learn/subsetting.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> Subsetting
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="learn/controls.html">
+                            
+                            <a href="../learn/controls.html">
+                                <i class="fa fa-check"></i> <b>1.3.</b> Control Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4" data-path="learn/functions.html">
+                            
+                            <a href="../learn/functions.html">
+                                <i class="fa fa-check"></i> <b>1.4.</b> Functions
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5" data-path="learn/vectorization.html">
+                            
+                            <a href="../learn/vectorization.html">
+                                <i class="fa fa-check"></i> <b>1.5.</b> Vectorization
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="explore/README.html">
+                
+                <a href="../explore/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> Data Wrangling
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="explore/tidy.html">
+                            
+                            <a href="../explore/tidy.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> Tidy Data
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="explore/reshape.html">
+                            
+                            <a href="../explore/reshape.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> Reshape
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="explore/summarize.html">
+                            
+                            <a href="../explore/summarize.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> Summarize
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="explore/sac.html">
+                            
+                            <a href="../explore/sac.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> Split Apply Combine
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.5" data-path="explore/sac2.html">
+                            
+                            <a href="../explore/sac2.html">
+                                <i class="fa fa-check"></i> <b>2.5.</b> Split Apply Combine 2
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="visualize/README.html">
+                
+                <a href="../visualize/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> Data Visualization
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="visualize/base_graphics.html">
+                            
+                            <a href="../visualize/base_graphics.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Base Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="visualize/ggplot2.html">
+                            
+                            <a href="../visualize/ggplot2.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Grammar of Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="visualize/interactive.html">
+                            
+                            <a href="../visualize/interactive.html">
+                                <i class="fa fa-check"></i> <b>3.3.</b> Interactive Graphics
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 62.5%;min-width: 56.25%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../learn/README.html" title="Introduction to R" class="chapter done new-chapter" data-progress="1" style="left: 6.25%;"></a>
+    
+        <a href="../learn/structures.html" title="Data Structures" class="chapter done " data-progress="1.1" style="left: 12.5%;"></a>
+    
+        <a href="../learn/subsetting.html" title="Subsetting" class="chapter done " data-progress="1.2" style="left: 18.75%;"></a>
+    
+        <a href="../learn/controls.html" title="Control Structures" class="chapter done " data-progress="1.3" style="left: 25%;"></a>
+    
+        <a href="../learn/functions.html" title="Functions" class="chapter done " data-progress="1.4" style="left: 31.25%;"></a>
+    
+        <a href="../learn/vectorization.html" title="Vectorization" class="chapter done " data-progress="1.5" style="left: 37.5%;"></a>
+    
+        <a href="../explore/README.html" title="Data Wrangling" class="chapter done new-chapter" data-progress="2" style="left: 43.75%;"></a>
+    
+        <a href="../explore/tidy.html" title="Tidy Data" class="chapter done " data-progress="2.1" style="left: 50%;"></a>
+    
+        <a href="../explore/reshape.html" title="Reshape" class="chapter done " data-progress="2.2" style="left: 56.25%;"></a>
+    
+        <a href="../explore/summarize.html" title="Summarize" class="chapter done " data-progress="2.3" style="left: 62.5%;"></a>
+    
+        <a href="../explore/sac.html" title="Split Apply Combine" class="chapter  " data-progress="2.4" style="left: 68.75%;"></a>
+    
+        <a href="../explore/sac2.html" title="Split Apply Combine 2" class="chapter  " data-progress="2.5" style="left: 75%;"></a>
+    
+        <a href="../visualize/README.html" title="Data Visualization" class="chapter  new-chapter" data-progress="3" style="left: 81.25%;"></a>
+    
+        <a href="../visualize/base_graphics.html" title="Base Graphics" class="chapter  " data-progress="3.1" style="left: 87.5%;"></a>
+    
+        <a href="../visualize/ggplot2.html" title="Grammar of Graphics" class="chapter  " data-progress="3.2" style="left: 93.75%;"></a>
+    
+        <a href="../visualize/interactive.html" title="Interactive Graphics" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_6">
+                    
+                        <h1 id="summarize">Summarize</h1>
+<h2 id="baby-names">Baby Names</h2>
+<p>The first dataset we will be exploring is the <code>bnames2</code> dataset, which consists of the
+top 1000 male and female baby names in the US, from 1880 to 2008. It consists of 258,000 records (1000 x 2 x 129) with five ariables: <code>year</code>, <code>name</code>, <code>soundex</code>, <code>sex</code> and <code>prop</code>.</p>
+<p>Let us begin by reading the dataset into our R session. Note that <code>read.csv</code> can work directly on the zipped file, so there is no reason to unzip it prior to reading.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># tf &lt;-  'bnames2.csv.bz2')</span>
+<span class="hljs-comment"># downloader::download("http://stat405.had.co.nz/data/bnames2.csv.bz2", tf)</span>
+bnames2 &lt;- read.csv(<span class="hljs-string">"bnames2.csv.bz2"</span>)
+</code></pre>
+<p><!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+<!-- Mon Apr 14 10:33:00 2014 --></p>
+<TABLE style='width:75%;'>
+<TR> <TH> year </TH> <TH> name </TH> <TH> prop </TH> <TH> sex </TH> <TH> soundex </TH>  </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> John </TD> <TD align="right"> 0.08 </TD> <TD> boy </TD> <TD> J500 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> William </TD> <TD align="right"> 0.08 </TD> <TD> boy </TD> <TD> W450 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> James </TD> <TD align="right"> 0.05 </TD> <TD> boy </TD> <TD> J520 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> Charles </TD> <TD align="right"> 0.05 </TD> <TD> boy </TD> <TD> C642 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> George </TD> <TD align="right"> 0.04 </TD> <TD> boy </TD> <TD> G620 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> Frank </TD> <TD align="right"> 0.03 </TD> <TD> boy </TD> <TD> F652 </TD> </TR>
+   </TABLE>
+
+
+<p>There are several interesting questions one might ask with this sort of data. Let us start with a simple question of tracking the popularity of a specific name over time. It is usual for people to try and track their own name. However, given that my name is nowhere to be found in this dataset, I am going to use <code>Greg</code>, since I knew beforehand that he was going to be in the audience (Sorry Greg!)</p>
+<pre><code class="lang-r">greg &lt;- subset(bnames2, name == <span class="hljs-string">"Greg"</span>)
+</code></pre>
+<p>It is easier to explore data visually. So let us plot the trend using <code>ggplot2</code>. This is going to be a light-weight introduction to this wonderful package, of which we are going to see more in later sessions. </p>
+<p>The code below is self-explanatory. We are using the <code>qplot</code> function (which stands for <strong>q</strong>uickplot), and asking it to give us a <code>line</code> plot of <code>year</code> vs. <code>prop</code>, both of which can be found in the dataset <code>greg</code>.</p>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(ggplot2)
+qplot(x = year, y = prop, data = greg, geom = <span class="hljs-string">'line'</span>)
+</code></pre>
+<p><img src="figure/unnamed-chunk-3.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
+<p>We see (quite unexpectedly I think!) that Greg as a name peaked in popularity sometime in 1965 and has since been on the decline.</p>
+<p>Let us take another name at random, say &quot;Michelle&quot;</p>
+<pre><code class="lang-r">michelle &lt;- subset(bnames2, name == <span class="hljs-string">"Michelle"</span>)
+qplot(x = year, y = prop, data = michelle, geom = <span class="hljs-string">'line'</span>)
+</code></pre>
+<p><img src="figure/unnamed-chunk-4.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" /></p>
+<p>Mmm.. this looks like a big mess. Why do we see this awful sawtooth like pattern? Can you come up with a reason?</p>
+<p>Let us plot the same data using <code>point</code> instead of <code>line</code>.</p>
+<pre><code class="lang-r">qplot(x = year, y = prop, data = michelle, geom = <span class="hljs-string">'point'</span>)
+</code></pre>
+<p><img src="figure/unnamed-chunk-5.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" /></p>
+<p>It seems like there are two clusters of data. Well, it is not surprising since Michelle is a name used for both boys and girls. So, if we were to create a <code>line</code> plot, we should make sure to tell <code>qplot</code> to group the variables by <code>sex</code>. </p>
+<pre><code class="lang-r">qplot(x = year, y = prop, data = michelle, geom = <span class="hljs-string">'line'</span>, group = sex)
+</code></pre>
+<p><img src="figure/unnamed-chunk-6.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" /></p>
+<p>Note that we could also tell <code>qplot</code> to color the lines based on <code>sex</code> by passing <code>color = sex</code> in the call. We don&#39;t have to set the <code>group</code> argument, since <code>qplot</code> will automatically do it for us. Magical right!</p>
+<p><strong>Exercise 1</strong></p>
+<p>Repeat the same exercises we did for <code>name</code> with the variable <code>soundex</code>. In other words, use the <code>soundex</code> variable to extract all names that sound like yours and plot their popularity. Make sure to think about the <code>geom</code> you would like to use!</p>
+<p><strong>Solution 1</strong></p>
+<pre><code class="lang-r">greg_soundex = greg$soundex[<span class="hljs-number">1</span>]
+greg_like &lt;- subset(bnames2, soundex == greg_soundex)
+qplot(x = year, y = prop, data = greg_like, geom = <span class="hljs-string">'point'</span>)
+</code></pre>
+<p><img src="figure/unnamed-chunk-7.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" /></p>
+<p>If we had to track the popularity of a specific <code>soundex</code>, we need to <code>summarize</code> the data by aggregating the values of <code>prop</code> across all names with the same soundex. Once again, while base R has all the tooling to accomplish this directly, I am a big fan of doing this with the <code>plyr</code> package, which provides a remarkably consistent set of verbs to manipulate data.</p>
+<h3 id="data-manipulation-verbs">Data Manipulation Verbs</h3>
+<p>It is good to think of data manipulation in terms of verbs. Those of you who have used <code>SQL</code> or <code>pandas</code> might be familiar with these already. Here are some basic verbs that we will be exploring</p>
+<ol>
+<li>subset</li>
+<li>mutate</li>
+<li>arrange</li>
+<li>summarize</li>
+<li>join</li>
+</ol>
+<p>Another important verb that is often used in conjunction with the above five is <code>group</code>. Rather than explaining the theory behind each of these verbs and their usage, let us get our hands dirty with interesting questions posed by data and using it to discover these verbs! I will make sure to give you a concise summary at the end of this session.</p>
+<p><strong>Exercise 2</strong></p>
+<p>Explore the following</p>
+<ul>
+<li>In which year was your name most popular? Least popular?</li>
+<li>Reorder the data frame containing your name from highest to lowest popularity.</li>
+<li>Add a new column that gives the number of babies per thousand with your name.</li>
+</ul>
+<h2 id="births">Births</h2>
+<p>Suppose, we want to explore trends in the total number of people with a specific name across all the years. The <code>bnames2</code> dataset only has proportions. So, to be able to address this question, we need total number of births by year.</p>
+<p>Fortunately, that data is available too. Let us read in the <code>births</code> dataset and plot the trends in total number of <code>births</code> across <code>sex</code> by <code>year</code>.</p>
+<pre><code class="lang-r">births &lt;- read.csv(<span class="hljs-string">"http://stat405.had.co.nz/data/births.csv"</span>)
+qplot(year, births, data = births, color = sex, geom = <span class="hljs-string">'line'</span>)
+</code></pre>
+<p><img src="figure/summarize-births-1.png" title="plot of chunk summarize-births-1" alt="plot of chunk summarize-births-1" style="display: block; margin: auto;" /></p>
+<p><strong>What explains the peaks?</strong></p>
+<p><a href="javascript:expandcollapse('solution1')">
+   [+/-] Answer
+</a><br></p>
+<p><span class='posthidden' id='solution1'></p>
+<ul>
+<li>1936: SSNs were issued for the first time.</li>
+<li>1986: needed for child tax deduction.
+</span></li>
+</ul>
+<h2 id="join">Join</h2>
+<p>Going back to the question we were trying to address, we need a way to <code>join</code> the <code>births</code> data with <code>bnames2</code> so that we can compute total numbers. Base R has the <code>merge</code> function to achieve this. But, I am partial to the <code>join</code> function in <code>plyr</code>, and so we shall use that.</p>
+<pre><code class="lang-r">bnames2_b &lt;- join(bnames2, births, by = c(<span class="hljs-string">"sex"</span>, <span class="hljs-string">"year"</span>))
+</code></pre>
+<p><!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+<!-- Mon Apr 14 10:33:03 2014 --></p>
+<TABLE style='width:75%;'>
+<TR> <TH> year </TH> <TH> name </TH> <TH> prop </TH> <TH> sex </TH> <TH> soundex </TH> <TH> births </TH>  </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> John </TD> <TD align="right"> 0.08 </TD> <TD> boy </TD> <TD> J500 </TD> <TD align="right"> 118405 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> William </TD> <TD align="right"> 0.08 </TD> <TD> boy </TD> <TD> W450 </TD> <TD align="right"> 118405 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> James </TD> <TD align="right"> 0.05 </TD> <TD> boy </TD> <TD> J520 </TD> <TD align="right"> 118405 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> Charles </TD> <TD align="right"> 0.05 </TD> <TD> boy </TD> <TD> C642 </TD> <TD align="right"> 118405 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> George </TD> <TD align="right"> 0.04 </TD> <TD> boy </TD> <TD> G620 </TD> <TD align="right"> 118405 </TD> </TR>
+  <TR> <TD align="right"> 1880 </TD> <TD> Frank </TD> <TD align="right"> 0.03 </TD> <TD> boy </TD> <TD> F652 </TD> <TD align="right"> 118405 </TD> </TR>
+   </TABLE>
+
+
+<p>There are several ways to <code>join</code> data, especially around the handling of rows/columns that are not present in one of the two datasets being merged. Here is a set of simple venn-diagrams to illustrate the possibilities. The <code>join</code> function supports most of these using the <code>type</code> and <code>match</code> argument. You can read up the documentation using <code>?join</code> for more details.</p>
+<p><img src="http://www.udel.edu/evelyn/SQL-Class2/joins.jpg" alt="sql-join"></p>
+<p>Now that we have all the data required to carry out the exploration exercise we started, let us power through. </p>
+<pre><code class="lang-r">greg &lt;- subset(bnames2_b, name == <span class="hljs-string">'Greg'</span>)
+greg &lt;- mutate(greg, tot = prop * births)
+qplot(year, births, data = greg, geom = <span class="hljs-string">'line'</span>)
+</code></pre>
+<p><img src="figure/unnamed-chunk-10.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" /></p>
+<p>Ah. This looks better. So Greg&#39;s name is picking up popularity in absolute terms!</p>
+<p><strong>Exercise 3</strong></p>
+<p>What is the most popular name in the US across all these years (1880 - 2008)? Any guesses? Enter your guesses on Etherpad.</p>
+<p><strong>Solution 3</strong></p>
+<p>We can answer this question if we can compute the total number of people with a specific name summed up across all the years. For a specific name, we can use the <code>summarize</code> function to compute this summary.</p>
+<pre><code class="lang-r">greg_tot &lt;- summarize(greg, tot = sum(prop * births))
+</code></pre>
+<p>How do we do this for all names. In terms of pseudocode, here is what we would do.</p>
+<ol>
+<li><strong>Split</strong> the dataset by name.</li>
+<li><strong>Apply</strong> the summary computations to each name.</li>
+<li><strong>Combine</strong> the summaries created into a single dataset.</li>
+</ol>
+<p>Let us implement this in code.</p>
+<pre><code class="lang-r"><span class="hljs-comment"># Split</span>
+pieces &lt;- split(bnames2_b, bnames2_b$name)
+
+<span class="hljs-comment"># Apply</span>
+results &lt;- vector(<span class="hljs-string">"list"</span>, length(pieces))
+<span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> seq_along(pieces)){
+  results[[i]] &lt;- summarize(pieces[[i]],
+     name = name[<span class="hljs-number">1</span>],
+     tot = sum(prop * births)
+  )
+}
+
+<span class="hljs-comment"># Combine</span>
+result &lt;- do.call(<span class="hljs-string">"rbind"</span>, results)
+</code></pre>
+<p>To answer the question, we need to <code>arrange</code> the data in descending order of the variable <code>tot</code>.</p>
+<pre><code class="lang-r">most_pop_name &lt;- arrange(result, desc(tot))[<span class="hljs-number">1</span>,<span class="hljs-string">"name"</span>]
+</code></pre>
+<p>Ready to see the final answer!</p>
+<p><a href="javascript:expandcollapse('solution2')">
+   [+/-] Answer
+</a><br></p>
+<p><span class='posthidden' id='solution2'>
+And the winner is ... <strong>James</strong>
+</span></p>
+<style>
+  .posthidden {display:none} 
+  .postshown {display:inline}
+</style>
+
+<script type="text/Javascript"> 
+
+  function expandcollapse (postid) { 
+    whichpost = document.getElementById(postid); 
+
+     if (whichpost.className=="postshown") { 
+      whichpost.className="posthidden"; 
+     } 
+     else { 
+      whichpost.className="postshown"; 
+     } 
+  } 
+</script>
+
+
+<style>
+p {
+  text-align: justify;
+}
+</style>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../explore/reshape.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../explore/sac.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

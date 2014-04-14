@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Subsetting | Introduction to R</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="idocs">
+        <meta name="description" content="These are notes for an introductory R workshop I am teaching for Python Programmers.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../learn/controls.html" />
+        
+        
+        <link rel="prev" href="../learn/structures.html" />
+        
+
+        <meta property="og:title" content="Subsetting | Introduction to R">
+        <meta property="og:site_name" content="Introduction to R">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/idocs">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="idocs/test1" data-level="1.2" data-basepath=".." data-revision="1397510917583">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/idocs/test1" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/idocs/test1/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/idocs/test1/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Introduction to R</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/idocs" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/edit/master/learn/subsetting.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="learn/README.html">
+                
+                <a href="../learn/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Introduction to R
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="learn/structures.html">
+                            
+                            <a href="../learn/structures.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> Data Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="learn/subsetting.html">
+                            
+                            <a href="../learn/subsetting.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> Subsetting
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="learn/controls.html">
+                            
+                            <a href="../learn/controls.html">
+                                <i class="fa fa-check"></i> <b>1.3.</b> Control Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4" data-path="learn/functions.html">
+                            
+                            <a href="../learn/functions.html">
+                                <i class="fa fa-check"></i> <b>1.4.</b> Functions
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5" data-path="learn/vectorization.html">
+                            
+                            <a href="../learn/vectorization.html">
+                                <i class="fa fa-check"></i> <b>1.5.</b> Vectorization
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="explore/README.html">
+                
+                <a href="../explore/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> Data Wrangling
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="explore/tidy.html">
+                            
+                            <a href="../explore/tidy.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> Tidy Data
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="explore/reshape.html">
+                            
+                            <a href="../explore/reshape.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> Reshape
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="explore/summarize.html">
+                            
+                            <a href="../explore/summarize.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> Summarize
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="explore/sac.html">
+                            
+                            <a href="../explore/sac.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> Split Apply Combine
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.5" data-path="explore/sac2.html">
+                            
+                            <a href="../explore/sac2.html">
+                                <i class="fa fa-check"></i> <b>2.5.</b> Split Apply Combine 2
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="visualize/README.html">
+                
+                <a href="../visualize/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> Data Visualization
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="visualize/base_graphics.html">
+                            
+                            <a href="../visualize/base_graphics.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Base Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="visualize/ggplot2.html">
+                            
+                            <a href="../visualize/ggplot2.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Grammar of Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="visualize/interactive.html">
+                            
+                            <a href="../visualize/interactive.html">
+                                <i class="fa fa-check"></i> <b>3.3.</b> Interactive Graphics
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 18.75%;min-width: 12.5%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../learn/README.html" title="Introduction to R" class="chapter done new-chapter" data-progress="1" style="left: 6.25%;"></a>
+    
+        <a href="../learn/structures.html" title="Data Structures" class="chapter done " data-progress="1.1" style="left: 12.5%;"></a>
+    
+        <a href="../learn/subsetting.html" title="Subsetting" class="chapter done " data-progress="1.2" style="left: 18.75%;"></a>
+    
+        <a href="../learn/controls.html" title="Control Structures" class="chapter  " data-progress="1.3" style="left: 25%;"></a>
+    
+        <a href="../learn/functions.html" title="Functions" class="chapter  " data-progress="1.4" style="left: 31.25%;"></a>
+    
+        <a href="../learn/vectorization.html" title="Vectorization" class="chapter  " data-progress="1.5" style="left: 37.5%;"></a>
+    
+        <a href="../explore/README.html" title="Data Wrangling" class="chapter  new-chapter" data-progress="2" style="left: 43.75%;"></a>
+    
+        <a href="../explore/tidy.html" title="Tidy Data" class="chapter  " data-progress="2.1" style="left: 50%;"></a>
+    
+        <a href="../explore/reshape.html" title="Reshape" class="chapter  " data-progress="2.2" style="left: 56.25%;"></a>
+    
+        <a href="../explore/summarize.html" title="Summarize" class="chapter  " data-progress="2.3" style="left: 62.5%;"></a>
+    
+        <a href="../explore/sac.html" title="Split Apply Combine" class="chapter  " data-progress="2.4" style="left: 68.75%;"></a>
+    
+        <a href="../explore/sac2.html" title="Split Apply Combine 2" class="chapter  " data-progress="2.5" style="left: 75%;"></a>
+    
+        <a href="../visualize/README.html" title="Data Visualization" class="chapter  new-chapter" data-progress="3" style="left: 81.25%;"></a>
+    
+        <a href="../visualize/base_graphics.html" title="Base Graphics" class="chapter  " data-progress="3.1" style="left: 87.5%;"></a>
+    
+        <a href="../visualize/ggplot2.html" title="Grammar of Graphics" class="chapter  " data-progress="3.2" style="left: 93.75%;"></a>
+    
+        <a href="../visualize/interactive.html" title="Interactive Graphics" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_15">
+                    
+                        <h1 id="subsetting-data">Subsetting Data</h1>
+<pre><code class="lang-r">knitr::knit_hooks$set(document = <span class="hljs-keyword">function</span>(x) {
+    gsub(<span class="hljs-string">"```\n*```r\n*"</span>, <span class="hljs-string">""</span>, x)
+})
+</code></pre>
+<p>R has many powerful subset operators and mastering them will allow you to easily perform complex operation on any kind of dataset. Allows you to manipulate data very succinctly.</p>
+<p>As the last section for this topic we&#39;ll cover:</p>
+<ul>
+<li>The three subsetting operators,</li>
+<li>The six types of subsetting,</li>
+<li>Important difference in subsetting behaviour for different objects </li>
+<li>Using subsetting in conjunction with assignment</li>
+</ul>
+<h2 id="subsetting-atomic-vectors">Subsetting atomic vectors</h2>
+<pre><code class="lang-r">x &lt;- c(<span class="hljs-number">5.4</span>, <span class="hljs-number">6.2</span>, <span class="hljs-number">7.1</span>, <span class="hljs-number">4.8</span>)
+</code></pre>
+<p><strong>We can subset this in 5 ways</strong></p>
+<p>Using positive integers</p>
+<pre><code class="lang-r">x[<span class="hljs-number">1</span>]
+</code></pre>
+<pre><code>## <span class="hljs-attr_selector">[1]</span> 5<span class="hljs-class">.4</span>
+<span class="hljs-tag">x</span><span class="hljs-attr_selector">[c(3, 1)]</span>
+</code></pre><pre><code><span class="hljs-preprocessor">## [1] 7.1 5.4</span>
+<span class="hljs-preprocessor"># We can duplicate indices</span>
+x[c(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)]
+</code></pre><pre><code><span class="hljs-preprocessor">## [1] 5.4 5.4</span>
+<span class="hljs-preprocessor"># Real numbers are silently truncated to integers</span>
+x[c(<span class="hljs-number">2.1</span>, <span class="hljs-number">2.9</span>)]
+</code></pre><pre><code><span class="hljs-preprocessor">## [1] 6.2 6.2</span>
+</code></pre><p>Using negative integers</p>
+<pre><code class="lang-r"><span class="hljs-comment"># skip the first element</span>
+x[-<span class="hljs-number">1</span>]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 6.2 7.1 4.8</span>
+<span class="hljs-preprocessor"># skip the first and the fifth</span>
+x[-c(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>)]
+</code></pre><pre><code><span class="hljs-preprocessor">## [1] 6.2 7.1 4.8</span>
+</code></pre><p>Using logical operators</p>
+<pre><code class="lang-r">x[c(<span class="hljs-literal">TRUE</span>, <span class="hljs-literal">TRUE</span>, <span class="hljs-literal">FALSE</span>, <span class="hljs-literal">FALSE</span>)]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 5.4 6.2</span>
+<span class="hljs-preprocessor"># or based on a condition</span>
+x[x &gt; <span class="hljs-number">3</span>]
+</code></pre><pre><code>## <span class="hljs-attr_selector">[1]</span> 5<span class="hljs-class">.4</span> 6<span class="hljs-class">.2</span> 7<span class="hljs-class">.1</span> 4<span class="hljs-class">.8</span>
+<span class="hljs-tag">x</span><span class="hljs-attr_selector">[which(x &gt; 3)]</span>
+</code></pre><pre><code><span class="hljs-preprocessor">## [1] 5.4 6.2 7.1 4.8</span>
+<span class="hljs-preprocessor"># Also see `which.max()` and `which.min()`</span>
+</code></pre><p>with nothing</p>
+<pre><code class="lang-r">x[]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 5.4 6.2 7.1 4.8</span>
+<span class="hljs-preprocessor"># useful when dealing with 2 or higher dimensional objects</span>
+</code></pre><p>with zero</p>
+<pre><code class="lang-r">x[<span class="hljs-number">0</span>]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## numeric(0)</span>
+<span class="hljs-preprocessor"># helpful for generating test data or creating empty objects</span>
+</code></pre><p>Referencing objects by their names</p>
+<pre><code class="lang-r">(y &lt;- setNames(x, letters[<span class="hljs-number">1</span>:<span class="hljs-number">4</span>]))
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   a   b   c   d </span>
+<span class="hljs-preprocessor">## 5.4 6.2 7.1 4.8</span>
+y[c(<span class="hljs-string">"d"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"a"</span>)]
+</code></pre><pre><code><span class="hljs-preprocessor">##   d   c   a </span>
+<span class="hljs-preprocessor">## 4.8 7.1 5.4</span>
+<span class="hljs-preprocessor"># We can also repeat indices</span>
+y[c(<span class="hljs-string">"a"</span>, <span class="hljs-string">"a"</span>, <span class="hljs-string">"a"</span>)]
+</code></pre><pre><code><span class="hljs-preprocessor">##   a   a   a </span>
+<span class="hljs-preprocessor">## 5.4 5.4 5.4</span>
+<span class="hljs-preprocessor"># Names are always matched exactly, not partially</span>
+z &lt;- c(abc = <span class="hljs-number">1</span>, def = <span class="hljs-number">2</span>)
+z[c(<span class="hljs-string">"a"</span>, <span class="hljs-string">"d"</span>)]
+</code></pre><pre><code><span class="hljs-preprocessor">## &lt;NA&gt; &lt;NA&gt; </span>
+<span class="hljs-preprocessor">##   NA   NA</span>
+</code></pre><hr>
+<h2 id="subsetting-lists">Subsetting lists</h2>
+<p>Subsetting a list works in exactly the same way as subsetting an atomic vector. Subsetting a list with [ will always return a list: <code>[[</code> and <code>$</code>, as described below, let you pull out the components of the list.</p>
+<pre><code class="lang-r">x &lt;- as.list(<span class="hljs-number">1</span>:<span class="hljs-number">10</span>)
+x[<span class="hljs-number">1</span>:<span class="hljs-number">5</span>]
+</code></pre>
+<pre><code>## <span class="hljs-string">[[1]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-number">1</span>
+## 
+## <span class="hljs-string">[[2]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-number">2</span>
+## 
+## <span class="hljs-string">[[3]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-number">3</span>
+## 
+## <span class="hljs-string">[[4]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-number">4</span>
+## 
+## <span class="hljs-string">[[5]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-number">5</span>
+# What class is this object?
+</code></pre><p>To extract individual elements inside a list, use the <code>[[</code> operator</p>
+<pre><code class="lang-r"><span class="hljs-comment"># to get element 5</span>
+x[[<span class="hljs-number">5</span>]]
+</code></pre>
+<pre><code>## [<span class="hljs-number">1</span>] <span class="hljs-number">5</span>
+class(x<span class="hljs-string">[[5]]</span>)
+</code></pre><pre><code>## [<span class="hljs-number">1</span>] <span class="hljs-string">"integer"</span>
+another_variable &lt;- x<span class="hljs-string">[[5]]</span>
+</code></pre><p>Or using their names</p>
+<pre><code class="lang-r">names(x) &lt;- letters[<span class="hljs-number">1</span>:<span class="hljs-number">5</span>]
+x$a
+</code></pre>
+<pre><code>## [<span class="hljs-number">1</span>] <span class="hljs-number">1</span>
+x<span class="hljs-string">[["a"]]</span>
+</code></pre><pre><code><span class="hljs-preprocessor">## [1] 1</span>
+</code></pre><h2 id="subsetting-matrices">Subsetting matrices</h2>
+<p>A matrix is subset with two arguments within single brackets, <code>[]</code>, and separated by a comma. The first argument specifies the rows, and the second the columns.</p>
+<pre><code class="lang-r">a &lt;- matrix(<span class="hljs-number">1</span>:<span class="hljs-number">9</span>, nrow = <span class="hljs-number">3</span>)
+colnames(a) &lt;- c(<span class="hljs-string">"A"</span>, <span class="hljs-string">"B"</span>, <span class="hljs-string">"C"</span>)
+a[<span class="hljs-number">1</span>:<span class="hljs-number">2</span>, ]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##      A B C</span>
+<span class="hljs-preprocessor">## [1,] 1 4 7</span>
+<span class="hljs-preprocessor">## [2,] 2 5 8</span>
+a[c(T, F, T), c(<span class="hljs-string">"B"</span>, <span class="hljs-string">"A"</span>)]
+</code></pre><pre><code><span class="hljs-preprocessor">##      B A</span>
+<span class="hljs-preprocessor">## [1,] 4 1</span>
+<span class="hljs-preprocessor">## [2,] 6 3</span>
+a[<span class="hljs-number">0</span>, -<span class="hljs-number">2</span>]
+</code></pre><pre><code><span class="hljs-preprocessor">##      A C</span>
+</code></pre><h2 id="subsetting-data-frames">Subsetting data frames</h2>
+<pre><code class="lang-r">df &lt;- data.frame(x = <span class="hljs-number">1</span>:<span class="hljs-number">3</span>, y = <span class="hljs-number">3</span>:<span class="hljs-number">1</span>, z = letters[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>])
+df[df$x == <span class="hljs-number">2</span>, ]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   x y z</span>
+<span class="hljs-preprocessor">## 2 2 2 b</span>
+df[c(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>), ]
+</code></pre><pre><code><span class="hljs-preprocessor">##   x y z</span>
+<span class="hljs-preprocessor">## 1 1 3 a</span>
+<span class="hljs-preprocessor">## 3 3 1 c</span>
+</code></pre><p>There are two ways to select columns from a data frame</p>
+<ul>
+<li>Like a list:</li>
+</ul>
+<pre><code class="lang-r">df[c(<span class="hljs-string">"x"</span>, <span class="hljs-string">"z"</span>)]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   x z</span>
+<span class="hljs-preprocessor">## 1 1 a</span>
+<span class="hljs-preprocessor">## 2 2 b</span>
+<span class="hljs-preprocessor">## 3 3 c</span>
+</code></pre><ul>
+<li>Like a matrix:</li>
+</ul>
+<pre><code class="lang-r">df[, c(<span class="hljs-string">"x"</span>, <span class="hljs-string">"z"</span>)]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   x z</span>
+<span class="hljs-preprocessor">## 1 1 a</span>
+<span class="hljs-preprocessor">## 2 2 b</span>
+<span class="hljs-preprocessor">## 3 3 c</span>
+</code></pre><p>There&#39;s an important difference if you select a simple column: matrix subsetting simplifies by default, list subsetting does not.</p>
+<pre><code class="lang-r">df[<span class="hljs-string">"x"</span>]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   x</span>
+<span class="hljs-preprocessor">## 1 1</span>
+<span class="hljs-preprocessor">## 2 2</span>
+<span class="hljs-preprocessor">## 3 3</span>
+df[, <span class="hljs-string">"x"</span>]
+</code></pre><pre><code><span class="hljs-preprocessor">## [1] 1 2 3</span>
+</code></pre>
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../learn/structures.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../learn/controls.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

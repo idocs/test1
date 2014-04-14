@@ -1,0 +1,826 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Data Structures | Introduction to R</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="idocs">
+        <meta name="description" content="These are notes for an introductory R workshop I am teaching for Python Programmers.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../learn/subsetting.html" />
+        
+        
+        <link rel="prev" href="../learn/README.html" />
+        
+
+        <meta property="og:title" content="Data Structures | Introduction to R">
+        <meta property="og:site_name" content="Introduction to R">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/idocs">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="idocs/test1" data-level="1.1" data-basepath=".." data-revision="1397510917583">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/idocs/test1" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/idocs/test1/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/idocs/test1/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Introduction to R</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/idocs" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/edit/master/learn/structures.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="learn/README.html">
+                
+                <a href="../learn/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Introduction to R
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="learn/structures.html">
+                            
+                            <a href="../learn/structures.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> Data Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="learn/subsetting.html">
+                            
+                            <a href="../learn/subsetting.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> Subsetting
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="learn/controls.html">
+                            
+                            <a href="../learn/controls.html">
+                                <i class="fa fa-check"></i> <b>1.3.</b> Control Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4" data-path="learn/functions.html">
+                            
+                            <a href="../learn/functions.html">
+                                <i class="fa fa-check"></i> <b>1.4.</b> Functions
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5" data-path="learn/vectorization.html">
+                            
+                            <a href="../learn/vectorization.html">
+                                <i class="fa fa-check"></i> <b>1.5.</b> Vectorization
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="explore/README.html">
+                
+                <a href="../explore/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> Data Wrangling
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="explore/tidy.html">
+                            
+                            <a href="../explore/tidy.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> Tidy Data
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="explore/reshape.html">
+                            
+                            <a href="../explore/reshape.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> Reshape
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="explore/summarize.html">
+                            
+                            <a href="../explore/summarize.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> Summarize
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="explore/sac.html">
+                            
+                            <a href="../explore/sac.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> Split Apply Combine
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.5" data-path="explore/sac2.html">
+                            
+                            <a href="../explore/sac2.html">
+                                <i class="fa fa-check"></i> <b>2.5.</b> Split Apply Combine 2
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="visualize/README.html">
+                
+                <a href="../visualize/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> Data Visualization
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="visualize/base_graphics.html">
+                            
+                            <a href="../visualize/base_graphics.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Base Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="visualize/ggplot2.html">
+                            
+                            <a href="../visualize/ggplot2.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Grammar of Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="visualize/interactive.html">
+                            
+                            <a href="../visualize/interactive.html">
+                                <i class="fa fa-check"></i> <b>3.3.</b> Interactive Graphics
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 12.5%;min-width: 6.25%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../learn/README.html" title="Introduction to R" class="chapter done new-chapter" data-progress="1" style="left: 6.25%;"></a>
+    
+        <a href="../learn/structures.html" title="Data Structures" class="chapter done " data-progress="1.1" style="left: 12.5%;"></a>
+    
+        <a href="../learn/subsetting.html" title="Subsetting" class="chapter  " data-progress="1.2" style="left: 18.75%;"></a>
+    
+        <a href="../learn/controls.html" title="Control Structures" class="chapter  " data-progress="1.3" style="left: 25%;"></a>
+    
+        <a href="../learn/functions.html" title="Functions" class="chapter  " data-progress="1.4" style="left: 31.25%;"></a>
+    
+        <a href="../learn/vectorization.html" title="Vectorization" class="chapter  " data-progress="1.5" style="left: 37.5%;"></a>
+    
+        <a href="../explore/README.html" title="Data Wrangling" class="chapter  new-chapter" data-progress="2" style="left: 43.75%;"></a>
+    
+        <a href="../explore/tidy.html" title="Tidy Data" class="chapter  " data-progress="2.1" style="left: 50%;"></a>
+    
+        <a href="../explore/reshape.html" title="Reshape" class="chapter  " data-progress="2.2" style="left: 56.25%;"></a>
+    
+        <a href="../explore/summarize.html" title="Summarize" class="chapter  " data-progress="2.3" style="left: 62.5%;"></a>
+    
+        <a href="../explore/sac.html" title="Split Apply Combine" class="chapter  " data-progress="2.4" style="left: 68.75%;"></a>
+    
+        <a href="../explore/sac2.html" title="Split Apply Combine 2" class="chapter  " data-progress="2.5" style="left: 75%;"></a>
+    
+        <a href="../visualize/README.html" title="Data Visualization" class="chapter  new-chapter" data-progress="3" style="left: 81.25%;"></a>
+    
+        <a href="../visualize/base_graphics.html" title="Base Graphics" class="chapter  " data-progress="3.1" style="left: 87.5%;"></a>
+    
+        <a href="../visualize/ggplot2.html" title="Grammar of Graphics" class="chapter  " data-progress="3.2" style="left: 93.75%;"></a>
+    
+        <a href="../visualize/interactive.html" title="Interactive Graphics" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_11">
+                    
+                        <h2 id="data-structures">Data Structures</h2>
+<p>To make the best of the R language, you&#39;ll need a strong understanding of the basic data types and data structures and how to operate on those.</p>
+<p>It is <strong>Very Important</strong> to understand because these are the objects you will manipulate on a day-to-day basis in R. Dealing with object conversions is one of the most common sources of frustration for beginners.</p>
+<blockquote>
+<p>To understand computations in R, two slogans are helpful:</p>
+<ul>
+<li>Everything that exists is an object.</li>
+<li>Everything that happens is a function call.</li>
+</ul>
+<p><strong>John Chambers</strong></p>
+</blockquote>
+<p><code>R</code> has 6 (although we will not discuss the <code>raw</code> class for this workshop)  atomic classes.</p>
+<ul>
+<li>character</li>
+<li>numeric (real or decimal)</li>
+<li>integer</li>
+<li>logical</li>
+<li>complex</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;a&quot;, &quot;swc&quot;</td>
+<td>character</td>
+</tr>
+<tr>
+<td>2, 15.5</td>
+<td>numeric</td>
+</tr>
+<tr>
+<td>2 (Must add a <code>L</code> at end to denote integer)</td>
+<td>integer</td>
+</tr>
+<tr>
+<td><code>TRUE</code>, <code>FALSE</code></td>
+<td>logical</td>
+</tr>
+<tr>
+<td>1+4i</td>
+<td>complex</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-r">typeof()  <span class="hljs-comment"># what is it?</span>
+length()  <span class="hljs-comment"># how long is it? What about two dimensional objects?</span>
+attributes()  <span class="hljs-comment"># does it have any metadata?</span>
+
+<span class="hljs-comment"># Example</span>
+
+x &lt;- <span class="hljs-string">"dataset"</span>
+typeof(x)
+attributes(x)
+
+y &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">10</span>
+typeof(y)
+length(y)
+attributes(y)
+
+z &lt;- c(<span class="hljs-number">1L</span>, <span class="hljs-number">2L</span>, <span class="hljs-number">3L</span>)
+typeof(z)
+</code></pre>
+<p>R has many data structures. These include</p>
+<ul>
+<li>atomic vector</li>
+<li>list</li>
+<li>matrix</li>
+<li>data frame</li>
+<li>factors</li>
+<li>tables</li>
+</ul>
+<h3 id="vectors">Vectors</h3>
+<p>A vector is the most common and basic data structure in <code>R</code> and is pretty much the workhorse of R. Technically, vectors can be one of two types:</p>
+<ul>
+<li>atomic vectors</li>
+<li>lists</li>
+</ul>
+<p>although the term &quot;vector&quot; most commonly refers to the atomic type not lists.</p>
+<p><strong>Atomic Vectors</strong></p>
+<p>A vector can be a vector of elements that are most commonly <code>character</code>, <code>logical</code>, <code>integer</code> or <code>numeric</code>.</p>
+<p>You can create an empty vector with <code>vector()</code> (By default the mode is <code>logical</code>. You can be more explicit as shown in the examples below.) It is more common to use direct constructors such as <code>character()</code>, <code>numeric()</code>, etc.</p>
+<pre><code class="lang-r">x &lt;- vector()
+<span class="hljs-comment"># with a length and type</span>
+vector(<span class="hljs-string">"character"</span>, length = <span class="hljs-number">10</span>)
+</code></pre>
+<pre><code>#<span class="hljs-array">#  </span>[<span class="hljs-number">1</span>] <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span>
+</code></pre><pre><code class="lang-r">character(<span class="hljs-number">5</span>)  <span class="hljs-comment">## character vector of length 5</span>
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span> <span class="hljs-string">""</span>
+</code></pre><pre><code class="lang-r">numeric(<span class="hljs-number">5</span>)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 0 0 0 0 0</span>
+</code></pre><pre><code class="lang-r">logical(<span class="hljs-number">5</span>)
+</code></pre>
+<pre><code>## [<span class="hljs-number">1</span>] <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span>
+</code></pre><p>Various examples:</p>
+<pre><code class="lang-r">x &lt;- c(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+x
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 1 2 3</span>
+</code></pre><pre><code class="lang-r">length(x)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 3</span>
+</code></pre><p><code>x</code> is a numeric vector. These are the most common kind. They are numeric objects and are treated as double precision real numbers. To explicitly create integers, add an <code>L</code> at the end.</p>
+<pre><code class="lang-r">x1 &lt;- c(<span class="hljs-number">1L</span>, <span class="hljs-number">2L</span>, <span class="hljs-number">3L</span>)
+</code></pre>
+<p>You can also have logical vectors. </p>
+<pre><code class="lang-r">y &lt;- c(<span class="hljs-literal">TRUE</span>, <span class="hljs-literal">TRUE</span>, <span class="hljs-literal">FALSE</span>, <span class="hljs-literal">FALSE</span>)
+</code></pre>
+<p>Finally you can have character vectors:</p>
+<pre><code class="lang-r">z &lt;- c(<span class="hljs-string">"Alec"</span>, <span class="hljs-string">"Dan"</span>, <span class="hljs-string">"Rob"</span>, <span class="hljs-string">"Karthik"</span>)
+</code></pre>
+<p><strong>Examine your vector</strong>  </p>
+<pre><code class="lang-r">typeof(z)
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"character"</span>
+</code></pre><pre><code class="lang-r">length(z)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 4</span>
+</code></pre><pre><code class="lang-r">class(z)
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"character"</span>
+</code></pre><pre><code class="lang-r">str(z)
+</code></pre>
+<pre><code>#<span class="hljs-array">#  chr </span>[<span class="hljs-number">1</span>:<span class="hljs-number">4</span>] <span class="hljs-string">"Alec"</span> <span class="hljs-string">"Dan"</span> <span class="hljs-string">"Rob"</span> <span class="hljs-string">"Karthik"</span>
+</code></pre><p>Question: Do you see a property that&#39;s common to all these vectors above?</p>
+<p><strong>Add elements</strong></p>
+<pre><code class="lang-r">z &lt;- c(z, <span class="hljs-string">"Annette"</span>)
+z
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"Alec"</span>    <span class="hljs-string">"Dan"</span>     <span class="hljs-string">"Rob"</span>     <span class="hljs-string">"Karthik"</span> <span class="hljs-string">"Annette"</span>
+</code></pre><p>More examples of vectors</p>
+<pre><code class="lang-r">x &lt;- c(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.7</span>)
+x &lt;- c(<span class="hljs-literal">TRUE</span>, <span class="hljs-literal">FALSE</span>)
+x &lt;- c(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>, <span class="hljs-string">"d"</span>, <span class="hljs-string">"e"</span>)
+x &lt;- <span class="hljs-number">9</span>:<span class="hljs-number">100</span>
+x &lt;- c(<span class="hljs-number">1</span> + (<span class="hljs-number">0</span>+<span class="hljs-number">0i</span>), <span class="hljs-number">2</span> + (<span class="hljs-number">0</span>+<span class="hljs-number">4i</span>))
+</code></pre>
+<p>You can also create vectors as a sequence of numbers</p>
+<pre><code class="lang-r">series &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">10</span>
+seq(<span class="hljs-number">10</span>)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##  [1]  1  2  3  4  5  6  7  8  9 10</span>
+</code></pre><pre><code class="lang-r">seq(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>, by = <span class="hljs-number">0.1</span>)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##  [1]  1.0  1.1  1.2  1.3  1.4  1.5  1.6  1.7  1.8  1.9  2.0  2.1  2.2  2.3</span>
+<span class="hljs-preprocessor">## [15]  2.4  2.5  2.6  2.7  2.8  2.9  3.0  3.1  3.2  3.3  3.4  3.5  3.6  3.7</span>
+<span class="hljs-preprocessor">## [29]  3.8  3.9  4.0  4.1  4.2  4.3  4.4  4.5  4.6  4.7  4.8  4.9  5.0  5.1</span>
+<span class="hljs-preprocessor">## [43]  5.2  5.3  5.4  5.5  5.6  5.7  5.8  5.9  6.0  6.1  6.2  6.3  6.4  6.5</span>
+<span class="hljs-preprocessor">## [57]  6.6  6.7  6.8  6.9  7.0  7.1  7.2  7.3  7.4  7.5  7.6  7.7  7.8  7.9</span>
+<span class="hljs-preprocessor">## [71]  8.0  8.1  8.2  8.3  8.4  8.5  8.6  8.7  8.8  8.9  9.0  9.1  9.2  9.3</span>
+<span class="hljs-preprocessor">## [85]  9.4  9.5  9.6  9.7  9.8  9.9 10.0</span>
+</code></pre><p><strong>Other objects</strong></p>
+<p><code>Inf</code> is infinity. You can have either positive or negative infinity.</p>
+<pre><code class="lang-r"><span class="hljs-number">1</span>/<span class="hljs-number">0</span>
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] Inf</span>
+</code></pre><pre><code class="lang-r"><span class="hljs-number">1</span>/<span class="hljs-literal">Inf</span>
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 0</span>
+</code></pre><p><code>NaN</code> means Not a number. It&#39;s an undefined value.</p>
+<pre><code class="lang-r"><span class="hljs-number">0</span>/<span class="hljs-number">0</span>
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] NaN</span>
+</code></pre><p>Each object can have attributes. Attribues can be part of an object of R. These include: </p>
+<ul>
+<li>names</li>
+<li>dimnames</li>
+<li>dim</li>
+<li>class</li>
+<li>attributes (contain metadata)</li>
+</ul>
+<p>You can also glean other attribute-like information such as length (works on vectors and lists) or number of characters (for character strings). </p>
+<pre><code class="lang-r">length(<span class="hljs-number">1</span>:<span class="hljs-number">10</span>)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 10</span>
+</code></pre><pre><code class="lang-r">nchar(<span class="hljs-string">"Software Carpentry"</span>)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 18</span>
+</code></pre><p><strong>What happens when you mix types?</strong></p>
+<p>R will create a resulting vector that is the least common denominator. The coercion will move towards the one that&#39;s easiest to coerce to.</p>
+<p><strong>Guess what the following do without running them first</strong></p>
+<pre><code class="lang-r">xx &lt;- c(<span class="hljs-number">1.7</span>, <span class="hljs-string">"a"</span>)
+xx &lt;- c(<span class="hljs-literal">TRUE</span>, <span class="hljs-number">2</span>)
+xx &lt;- c(<span class="hljs-string">"a"</span>, <span class="hljs-literal">TRUE</span>)
+</code></pre>
+<p>This is called implicit coercion.  You can also coerce vectors explicitly using the <code>as.&lt;class_name&gt;</code>. Example</p>
+<pre><code class="lang-r">as.numeric()
+as.character()
+</code></pre>
+<p>When you coerce an existing numeric vector with <code>as.numeric()</code>, it converts the vector to a double.</p>
+<pre><code class="lang-r">x &lt;- <span class="hljs-number">0</span>:<span class="hljs-number">6</span>
+identical(x, as.numeric(x))
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] FALSE</span>
+</code></pre><pre><code class="lang-r">typeof(x)
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"integer"</span>
+</code></pre><pre><code class="lang-r">typeof(as.numeric(x))
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"double"</span>
+</code></pre><pre><code class="lang-r">x &lt;- <span class="hljs-number">0</span>:<span class="hljs-number">6</span>
+as.numeric(x)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 0 1 2 3 4 5 6</span>
+</code></pre><pre><code class="lang-r">as.logical(x)
+</code></pre>
+<pre><code>## [<span class="hljs-number">1</span>] <span class="hljs-literal">FALSE</span>  <span class="hljs-literal">TRUE</span>  <span class="hljs-literal">TRUE</span>  <span class="hljs-literal">TRUE</span>  <span class="hljs-literal">TRUE</span>  <span class="hljs-literal">TRUE</span>  <span class="hljs-literal">TRUE</span>
+</code></pre><pre><code class="lang-r">as.character(x)
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"0"</span> <span class="hljs-string">"1"</span> <span class="hljs-string">"2"</span> <span class="hljs-string">"3"</span> <span class="hljs-string">"4"</span> <span class="hljs-string">"5"</span> <span class="hljs-string">"6"</span>
+</code></pre><pre><code class="lang-r">as.complex(x)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 0+0i 1+0i 2+0i 3+0i 4+0i 5+0i 6+0i</span>
+</code></pre><p>Sometimes coercions, especially nonsensical ones, won’t work.</p>
+<pre><code class="lang-r">x &lt;- c(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>, <span class="hljs-string">"c"</span>)
+as.numeric(x)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## Warning: NAs introduced by coercion</span>
+</code></pre><pre><code><span class="hljs-preprocessor">## [1] NA NA NA</span>
+</code></pre><pre><code class="lang-r">as.logical(x)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] NA NA NA</span>
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># both don't work</span>
+</code></pre>
+<p><strong>Sometimes there is implicit conversion</strong></p>
+<pre><code class="lang-r"><span class="hljs-number">1</span> &lt; <span class="hljs-string">"2"</span>
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] TRUE</span>
+</code></pre><pre><code class="lang-r"><span class="hljs-string">"1"</span> &gt; <span class="hljs-number">2</span>
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] FALSE</span>
+</code></pre><h2 id="matrix">Matrix</h2>
+<p>Matrices are a special vector in R. They are not a separate type of object but simply an atomic vector with dimensions added on to it. Matrices have rows and columns. </p>
+<pre><code class="lang-r">m &lt;- matrix(nrow = <span class="hljs-number">2</span>, ncol = <span class="hljs-number">2</span>)
+m
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##      [,1] [,2]</span>
+<span class="hljs-preprocessor">## [1,]   NA   NA</span>
+<span class="hljs-preprocessor">## [2,]   NA   NA</span>
+</code></pre><pre><code class="lang-r">dim(m)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 2 2</span>
+</code></pre><p>Matrices are filled column-wise. </p>
+<pre><code class="lang-r">m &lt;- matrix(<span class="hljs-number">1</span>:<span class="hljs-number">6</span>, nrow = <span class="hljs-number">2</span>, ncol = <span class="hljs-number">3</span>)
+</code></pre>
+<p>Other ways to construct a matrix</p>
+<pre><code class="lang-r">m &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">10</span>
+dim(m) &lt;- c(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>)
+</code></pre>
+<p>This takes a vector and transform into a matrix with 2 rows and 5 columns.</p>
+<p>Another way is to bind columns or rows using <code>cbind()</code> and <code>rbind()</code>.</p>
+<pre><code class="lang-r">x &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">3</span>
+y &lt;- <span class="hljs-number">10</span>:<span class="hljs-number">12</span>
+cbind(x, y)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##      x  y</span>
+<span class="hljs-preprocessor">## [1,] 1 10</span>
+<span class="hljs-preprocessor">## [2,] 2 11</span>
+<span class="hljs-preprocessor">## [3,] 3 12</span>
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># or</span>
+rbind(x, y)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   [,1] [,2] [,3]</span>
+<span class="hljs-preprocessor">## x    1    2    3</span>
+<span class="hljs-preprocessor">## y   10   11   12</span>
+</code></pre><p>You can also use the <code>byrow</code> argument to specify how the matrix is filled. From R&#39;s own documentation:</p>
+<pre><code class="lang-r">mdat &lt;- matrix(c(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>, <span class="hljs-number">11</span>,<span class="hljs-number">12</span>,<span class="hljs-number">13</span>), nrow = <span class="hljs-number">2</span>, ncol = <span class="hljs-number">3</span>, byrow = <span class="hljs-literal">TRUE</span>,
+               dimnames = list(c(<span class="hljs-string">"row1"</span>, <span class="hljs-string">"row2"</span>),
+                               c(<span class="hljs-string">"C.1"</span>, <span class="hljs-string">"C.2"</span>, <span class="hljs-string">"C.3"</span>)))
+mdat
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##      C.1 C.2 C.3</span>
+<span class="hljs-preprocessor">## row1   1   2   3</span>
+<span class="hljs-preprocessor">## row2  11  12  13</span>
+</code></pre><hr>
+<h2 id="list">List</h2>
+<p>In R lists act as containers. Unlike atomic vectors, the contents of a list are not restricted to a single mode and can encompass any mixture of data types. Lists are sometimes called recursive vectors, because a list can contain other lists. This makes them fundamentally different from atomic vectors. </p>
+<p>A list is a special type of vector. Each element can be a different type.</p>
+<p>Create lists using <code>list()</code> or coerce other objects using <code>as.list()</code></p>
+<pre><code class="lang-r">x &lt;- list(<span class="hljs-number">1</span>, <span class="hljs-string">"a"</span>, <span class="hljs-literal">TRUE</span>, <span class="hljs-number">1</span> + (<span class="hljs-number">0</span>+<span class="hljs-number">4i</span>))
+x
+</code></pre>
+<pre><code>## <span class="hljs-string">[[1]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-number">1</span>
+## 
+## <span class="hljs-string">[[2]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-string">"a"</span>
+## 
+## <span class="hljs-string">[[3]]</span>
+## [<span class="hljs-number">1</span>] TRUE
+## 
+## <span class="hljs-string">[[4]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-number">1</span>+<span class="hljs-number">4</span>i
+</code></pre><pre><code class="lang-r">x &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">10</span>
+x &lt;- as.list(x)
+length(x)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] 10</span>
+</code></pre><p>What is the class of <code>x[1]</code>?<br>How about <code>x[[1]]</code>?</p>
+<pre><code class="lang-r">xlist &lt;- list(a = <span class="hljs-string">"Karthik Ram"</span>, b = <span class="hljs-number">1</span>:<span class="hljs-number">10</span>, data = head(iris))
+xlist
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## $a</span>
+<span class="hljs-preprocessor">## [1] "Karthik Ram"</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $b</span>
+<span class="hljs-preprocessor">##  [1]  1  2  3  4  5  6  7  8  9 10</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $data</span>
+<span class="hljs-preprocessor">##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span>
+<span class="hljs-preprocessor">## 1          5.1         3.5          1.4         0.2  setosa</span>
+<span class="hljs-preprocessor">## 2          4.9         3.0          1.4         0.2  setosa</span>
+<span class="hljs-preprocessor">## 3          4.7         3.2          1.3         0.2  setosa</span>
+<span class="hljs-preprocessor">## 4          4.6         3.1          1.5         0.2  setosa</span>
+<span class="hljs-preprocessor">## 5          5.0         3.6          1.4         0.2  setosa</span>
+<span class="hljs-preprocessor">## 6          5.4         3.9          1.7         0.4  setosa</span>
+</code></pre><p>What is the length of this object?
+What about its structure?</p>
+<p>A list can contain many lists nested inside.</p>
+<pre><code class="lang-r">temp &lt;- list(list(list(list())))
+temp
+</code></pre>
+<pre><code>## <span class="hljs-string">[[1]]</span>
+## <span class="hljs-string">[[1]]</span><span class="hljs-string">[[1]]</span>
+## <span class="hljs-string">[[1]]</span><span class="hljs-string">[[1]]</span><span class="hljs-string">[[1]]</span>
+## list()
+</code></pre><pre><code class="lang-r">is.recursive(temp)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] TRUE</span>
+</code></pre><p>Lists are extremely useful inside functions. You can &quot;staple&quot; together lots of different kinds of results into a single object that a function can return.</p>
+<p>A list does not print to the console like a vector. Instead, each element of the list starts on a new line.</p>
+<p>Elements are indexed by double brackets. Single brackets will still return a(nother) list.</p>
+<hr>
+<h2 id="factors">Factors</h2>
+<p>Factors are special vectors that represent categorical data. Factors can be ordered or unordered and are important when for modelling functions such as <code>lm()</code> and <code>glm()</code> and also in plot methods.</p>
+<p>Factors can only contain pre-defined values.</p>
+<p>Factors are pretty much integers that have labels on them.  While factors look (and often behave) like character vectors, they are actually integers under the hood, and you need to be careful when treating them like strings. Some string methods will coerce factors to strings, while others will throw an error.</p>
+<p>Sometimes factors can be left unordered. Example: <code>male</code>, <code>female</code>.</p>
+<p>Other times you might want factors to be ordered (or ranked). Example: <code>low</code>, <code>medium</code>, <code>high</code>. </p>
+<p>Underlying it&#39;s represented by numbers 1, 2, 3.</p>
+<p>They are better than using simple integer labels because factors are what are called self describing. <code>male</code> and <code>female</code> is more descriptive than <code>1</code>s and <code>2</code>s. Helpful when there is no additional metadata.</p>
+<p>Which is <code>male</code>? <code>1</code> or <code>2</code>? You wouldn&#39;t be able to tell with just integer data. Factors have this information built in.</p>
+<p>Factors can be created with <code>factor()</code>. Input is generally a character vector.</p>
+<pre><code class="lang-r">x &lt;- factor(c(<span class="hljs-string">"yes"</span>, <span class="hljs-string">"no"</span>, <span class="hljs-string">"no"</span>, <span class="hljs-string">"yes"</span>, <span class="hljs-string">"yes"</span>))
+x
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] yes no  no  yes yes</span>
+<span class="hljs-preprocessor">## Levels: no yes</span>
+</code></pre><p><code>table(x)</code> will return a frequency table.</p>
+<p>If you need to convert a factor to a character vector, simply use</p>
+<pre><code class="lang-r">as.character(x)
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"yes"</span> <span class="hljs-string">"no"</span>  <span class="hljs-string">"no"</span>  <span class="hljs-string">"yes"</span> <span class="hljs-string">"yes"</span>
+</code></pre><p>In modeling functions, it is important to know what the baseline level is.
+This is the first factor but by default the ordering is determined by alphabetical order of words entered. You can change this by speciying the levels (another option is to use the function <code>relevel</code>).</p>
+<pre><code class="lang-r">x &lt;- factor(c(<span class="hljs-string">"yes"</span>, <span class="hljs-string">"no"</span>, <span class="hljs-string">"yes"</span>), levels = c(<span class="hljs-string">"yes"</span>, <span class="hljs-string">"no"</span>))
+x
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] yes no  yes</span>
+<span class="hljs-preprocessor">## Levels: yes no</span>
+</code></pre><h2 id="data-frame">Data frame</h2>
+<p>A data frame is a very important data type in R. It&#39;s pretty much the <em>de facto</em> data structure for most tabular data and what we use for statistics.</p>
+<p>Data frames can have additional attributes such as <code>rownames()</code>, which can be useful for annotating data, like subject_id or sample_id. But most of the time they are not used.</p>
+<p>Some additional information on data frames:</p>
+<ul>
+<li><p>Usually created by <code>read.csv()</code> and <code>read.table()</code>.</p>
+</li>
+<li><p>Can convert to <code>matrix</code> with <code>data.matrix()</code></p>
+</li>
+<li><p>Coercion will be forced and not always what you expect.</p>
+</li>
+<li><p>Can also create with <code>data.frame()</code> function.</p>
+</li>
+<li><p>Find the number of rows and columns with <code>nrow(df)</code> and <code>ncol(df)</code>, respectively.</p>
+</li>
+<li><p>Rownames are usually 1..n.</p>
+</li>
+</ul>
+<p><strong>Combining data frames</strong></p>
+<pre><code class="lang-r">df &lt;- data.frame(id = letters[<span class="hljs-number">1</span>:<span class="hljs-number">10</span>], x = <span class="hljs-number">1</span>:<span class="hljs-number">10</span>, y = rnorm(<span class="hljs-number">10</span>))
+df
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##    id  x        y</span>
+<span class="hljs-preprocessor">## 1   a  1 -1.37593</span>
+<span class="hljs-preprocessor">## 2   b  2  0.47094</span>
+<span class="hljs-preprocessor">## 3   c  3 -0.16046</span>
+<span class="hljs-preprocessor">## 4   d  4 -1.36914</span>
+<span class="hljs-preprocessor">## 5   e  5  0.39763</span>
+<span class="hljs-preprocessor">## 6   f  6 -1.92516</span>
+<span class="hljs-preprocessor">## 7   g  7  0.04107</span>
+<span class="hljs-preprocessor">## 8   h  8 -1.04832</span>
+<span class="hljs-preprocessor">## 9   i  9 -0.16875</span>
+<span class="hljs-preprocessor">## 10  j 10  0.82251</span>
+</code></pre><pre><code class="lang-r">cbind(df, data.frame(z = <span class="hljs-number">4</span>))
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##    id  x        y z</span>
+<span class="hljs-preprocessor">## 1   a  1 -1.37593 4</span>
+<span class="hljs-preprocessor">## 2   b  2  0.47094 4</span>
+<span class="hljs-preprocessor">## 3   c  3 -0.16046 4</span>
+<span class="hljs-preprocessor">## 4   d  4 -1.36914 4</span>
+<span class="hljs-preprocessor">## 5   e  5  0.39763 4</span>
+<span class="hljs-preprocessor">## 6   f  6 -1.92516 4</span>
+<span class="hljs-preprocessor">## 7   g  7  0.04107 4</span>
+<span class="hljs-preprocessor">## 8   h  8 -1.04832 4</span>
+<span class="hljs-preprocessor">## 9   i  9 -0.16875 4</span>
+<span class="hljs-preprocessor">## 10  j 10  0.82251 4</span>
+</code></pre><p>When you combine column wise, only row numbers need to match. If you are adding a vector, it will get repeated.</p>
+<p><strong>Useful functions</strong>  </p>
+<ul>
+<li><code>head()</code> - see first 6 rows</li>
+<li><code>tail()</code> - see last 6 rows</li>
+<li><code>dim()</code> - see dimensions</li>
+<li><code>nrow()</code> - number of rows</li>
+<li><code>ncol()</code> - number of columns</li>
+<li><code>str()</code> - structure of each column</li>
+<li><code>names()</code> - will list the <code>names</code> attribute for a data frame (or any object really), which gives the column names.</li>
+</ul>
+<p>A data frame is a special type of list where every element of the list has same length.</p>
+<p>See that it is actually a special list:</p>
+<pre><code class="lang-r">is.list(iris)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1] TRUE</span>
+</code></pre><pre><code class="lang-r">class(iris)
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"data.frame"</span>
+</code></pre><p><strong>Naming objects</strong></p>
+<p>Other R objects can also have names. Adding names is helpful since it&#39;s useful for readable code and self describing objects.</p>
+<pre><code class="lang-r">x &lt;- <span class="hljs-number">1</span>:<span class="hljs-number">3</span>
+names(x) &lt;- c(<span class="hljs-string">"karthik"</span>, <span class="hljs-string">"ram"</span>, <span class="hljs-string">"rocks"</span>)
+x
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## karthik     ram   rocks </span>
+<span class="hljs-preprocessor">##       1       2       3</span>
+</code></pre><p>Lists can also have names.</p>
+<pre><code class="lang-r">x &lt;- as.list(<span class="hljs-number">1</span>:<span class="hljs-number">10</span>)
+names(x) &lt;- letters[seq(along = x)]
+x
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## $a</span>
+<span class="hljs-preprocessor">## [1] 1</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $b</span>
+<span class="hljs-preprocessor">## [1] 2</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $c</span>
+<span class="hljs-preprocessor">## [1] 3</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $d</span>
+<span class="hljs-preprocessor">## [1] 4</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $e</span>
+<span class="hljs-preprocessor">## [1] 5</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $f</span>
+<span class="hljs-preprocessor">## [1] 6</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $g</span>
+<span class="hljs-preprocessor">## [1] 7</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $h</span>
+<span class="hljs-preprocessor">## [1] 8</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $i</span>
+<span class="hljs-preprocessor">## [1] 9</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## $j</span>
+<span class="hljs-preprocessor">## [1] 10</span>
+</code></pre><p>Finally matrices can have names and these are called <code>dimnames</code></p>
+<pre><code class="lang-r">m &lt;- matrix(<span class="hljs-number">1</span>:<span class="hljs-number">4</span>, nrow = <span class="hljs-number">2</span>)
+dimnames(m) &lt;- list(c(<span class="hljs-string">"a"</span>, <span class="hljs-string">"b"</span>), c(<span class="hljs-string">"c"</span>, <span class="hljs-string">"d"</span>))
+<span class="hljs-comment"># first element = rownames second element = colnames</span>
+m
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##   c d</span>
+<span class="hljs-preprocessor">## a 1 3</span>
+<span class="hljs-preprocessor">## b 2 4</span>
+</code></pre><pre><code class="lang-r">dimnames(m)
+</code></pre>
+<pre><code>## <span class="hljs-string">[[1]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-string">"a"</span> <span class="hljs-string">"b"</span>
+## 
+## <span class="hljs-string">[[2]]</span>
+## [<span class="hljs-number">1</span>] <span class="hljs-string">"c"</span> <span class="hljs-string">"d"</span>
+</code></pre><pre><code class="lang-r">colnames(m)  <span class="hljs-comment">## or rownames(m)</span>
+</code></pre>
+<pre><code>#<span class="hljs-array"># </span>[<span class="hljs-number">1</span>] <span class="hljs-string">"c"</span> <span class="hljs-string">"d"</span>
+</code></pre><hr>
+<h2 id="missing-values">Missing values</h2>
+<p>Denoted by <code>NA</code> and/or <code>NaN</code> for undefined mathematical operations.</p>
+<pre><code class="lang-r">is.na()
+is.nan()
+</code></pre>
+<p>check for both.</p>
+<p>NA values have a class. So you can have both an integer NA (<code>NA_integer_</code>) and a character NA (<code>NA_character_</code>).</p>
+<p><code>NaN</code> is also <code>NA</code>. But not the other way around.</p>
+<pre><code class="lang-r">x &lt;- c(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-literal">NA</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+x
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## [1]  1  2 NA  4  5</span>
+</code></pre><pre><code class="lang-r">is.na(x)  <span class="hljs-comment"># returns logical</span>
+</code></pre>
+<pre><code>## [<span class="hljs-number">1</span>] <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span>  <span class="hljs-literal">TRUE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span>
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># shows third</span>
+is.nan(x)
+</code></pre>
+<pre><code>## [<span class="hljs-number">1</span>] <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span>
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># none are NaN</span>
+</code></pre>
+<pre><code class="lang-r">x &lt;- c(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-literal">NA</span>, <span class="hljs-literal">NaN</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+is.na(x)
+</code></pre>
+<pre><code>## [<span class="hljs-number">1</span>] <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span>  <span class="hljs-literal">TRUE</span>  <span class="hljs-literal">TRUE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span>
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># shows 2 TRUE</span>
+is.nan(x)
+</code></pre>
+<pre><code>## [<span class="hljs-number">1</span>] <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span>  <span class="hljs-literal">TRUE</span> <span class="hljs-literal">FALSE</span> <span class="hljs-literal">FALSE</span>
+</code></pre><pre><code class="lang-r"><span class="hljs-comment"># shows 1 TRUE</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../learn/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../learn/subsetting.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

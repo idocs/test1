@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Tidy Data | Introduction to R</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="idocs">
+        <meta name="description" content="These are notes for an introductory R workshop I am teaching for Python Programmers.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../explore/reshape.html" />
+        
+        
+        <link rel="prev" href="../explore/README.html" />
+        
+
+        <meta property="og:title" content="Tidy Data | Introduction to R">
+        <meta property="og:site_name" content="Introduction to R">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/idocs">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="idocs/test1" data-level="2.1" data-basepath=".." data-revision="1397510917583">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/idocs/test1" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/idocs/test1/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/idocs/test1/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Introduction to R</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/idocs" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/edit/master/explore/tidy.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="learn/README.html">
+                
+                <a href="../learn/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Introduction to R
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="learn/structures.html">
+                            
+                            <a href="../learn/structures.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> Data Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="learn/subsetting.html">
+                            
+                            <a href="../learn/subsetting.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> Subsetting
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="learn/controls.html">
+                            
+                            <a href="../learn/controls.html">
+                                <i class="fa fa-check"></i> <b>1.3.</b> Control Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4" data-path="learn/functions.html">
+                            
+                            <a href="../learn/functions.html">
+                                <i class="fa fa-check"></i> <b>1.4.</b> Functions
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5" data-path="learn/vectorization.html">
+                            
+                            <a href="../learn/vectorization.html">
+                                <i class="fa fa-check"></i> <b>1.5.</b> Vectorization
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="explore/README.html">
+                
+                <a href="../explore/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> Data Wrangling
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="explore/tidy.html">
+                            
+                            <a href="../explore/tidy.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> Tidy Data
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="explore/reshape.html">
+                            
+                            <a href="../explore/reshape.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> Reshape
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="explore/summarize.html">
+                            
+                            <a href="../explore/summarize.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> Summarize
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="explore/sac.html">
+                            
+                            <a href="../explore/sac.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> Split Apply Combine
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.5" data-path="explore/sac2.html">
+                            
+                            <a href="../explore/sac2.html">
+                                <i class="fa fa-check"></i> <b>2.5.</b> Split Apply Combine 2
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="visualize/README.html">
+                
+                <a href="../visualize/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> Data Visualization
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="visualize/base_graphics.html">
+                            
+                            <a href="../visualize/base_graphics.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Base Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="visualize/ggplot2.html">
+                            
+                            <a href="../visualize/ggplot2.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Grammar of Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="visualize/interactive.html">
+                            
+                            <a href="../visualize/interactive.html">
+                                <i class="fa fa-check"></i> <b>3.3.</b> Interactive Graphics
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 50%;min-width: 43.75%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../learn/README.html" title="Introduction to R" class="chapter done new-chapter" data-progress="1" style="left: 6.25%;"></a>
+    
+        <a href="../learn/structures.html" title="Data Structures" class="chapter done " data-progress="1.1" style="left: 12.5%;"></a>
+    
+        <a href="../learn/subsetting.html" title="Subsetting" class="chapter done " data-progress="1.2" style="left: 18.75%;"></a>
+    
+        <a href="../learn/controls.html" title="Control Structures" class="chapter done " data-progress="1.3" style="left: 25%;"></a>
+    
+        <a href="../learn/functions.html" title="Functions" class="chapter done " data-progress="1.4" style="left: 31.25%;"></a>
+    
+        <a href="../learn/vectorization.html" title="Vectorization" class="chapter done " data-progress="1.5" style="left: 37.5%;"></a>
+    
+        <a href="../explore/README.html" title="Data Wrangling" class="chapter done new-chapter" data-progress="2" style="left: 43.75%;"></a>
+    
+        <a href="../explore/tidy.html" title="Tidy Data" class="chapter done " data-progress="2.1" style="left: 50%;"></a>
+    
+        <a href="../explore/reshape.html" title="Reshape" class="chapter  " data-progress="2.2" style="left: 56.25%;"></a>
+    
+        <a href="../explore/summarize.html" title="Summarize" class="chapter  " data-progress="2.3" style="left: 62.5%;"></a>
+    
+        <a href="../explore/sac.html" title="Split Apply Combine" class="chapter  " data-progress="2.4" style="left: 68.75%;"></a>
+    
+        <a href="../explore/sac2.html" title="Split Apply Combine 2" class="chapter  " data-progress="2.5" style="left: 75%;"></a>
+    
+        <a href="../visualize/README.html" title="Data Visualization" class="chapter  new-chapter" data-progress="3" style="left: 81.25%;"></a>
+    
+        <a href="../visualize/base_graphics.html" title="Base Graphics" class="chapter  " data-progress="3.1" style="left: 87.5%;"></a>
+    
+        <a href="../visualize/ggplot2.html" title="Grammar of Graphics" class="chapter  " data-progress="3.2" style="left: 93.75%;"></a>
+    
+        <a href="../visualize/interactive.html" title="Interactive Graphics" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_7">
+                    
+                        <h1 id="tidy-data">Tidy Data</h1>
+<p><strong>Question:</strong> Consider the following data below. How many variables does this dataset contain?</p>
+<p><!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+<!-- Mon Apr 14 06:15:21 2014 --></p>
+<TABLE style='width:50%;'>
+<TR> <TH> males </TH> <TH> females </TH>  </TR>
+  <TR> <TD align="right"> 4 </TD> <TD align="right"> 1 </TD> </TR>
+  <TR> <TD align="right"> 2 </TD> <TD align="right"> 5 </TD> </TR>
+   </TABLE>
+
+
+<p><a href="javascript:expandcollapse('solution1')">
+   [+/-] Solution
+ </a><br></p>
+<p><span class='posthidden' id='solution1'>
+The way the table is presented, it seems like there are only two variables. However, the correct answer is <strong>3</strong>. The variables are <code>injured?</code>, <code>count</code> and <code>gender</code>. 
+</span></p>
+<h3 id="what-is-tidy-data-">What is Tidy Data?</h3>
+<p>A dataset is said to be tidy if it satisfies the following conditions</p>
+<ol>
+<li>observations are in rows</li>
+<li>variables are in columns</li>
+<li>contained in a single dataset.</li>
+</ol>
+<p>Tidy data makes it easy to carry out data analysis.</p>
+<h3 id="explore-messy-data">Explore Messy Data</h3>
+<p>Let us explore some common causes of messiness by inspecting a few datasets. </p>
+<p><strong>Income Distribution by Religion</strong></p>
+<p>Our first dataset is based on a survey done by Pew Research that examines the relationship between <a href="http://www.pewforum.org/2009/01/30/income-distribution-within-us-religious-groups/" target="_blank">income and religious affiliation</a>. </p>
+<p>Read the dataset into your R session and inspect the first few rows to assess if it is tidy.</p>
+<pre><code class="lang-r">pew &lt;- read.delim(
+  file = <span class="hljs-string">"http://stat405.had.co.nz/data/pew.txt"</span>,
+  header = <span class="hljs-literal">TRUE</span>,
+  stringsAsFactors = <span class="hljs-literal">FALSE</span>,
+  check.names = <span class="hljs-literal">F</span>
+)
+</code></pre>
+<p><!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+<!-- Mon Apr 14 06:15:21 2014 --></p>
+<TABLE style='width:75%;'>
+<TR> <TH> religion </TH> <TH> &lt;$10k </TH> <TH> $10-20k </TH> <TH> $20-30k </TH> <TH> $30-40k </TH> <TH> $40-50k </TH> <TH> $50-75k </TH> <TH> $75-100k </TH> <TH> $100-150k </TH> <TH> &gt;150k </TH>  </TR>
+  <TR> <TD> Agnostic </TD> <TD align="right"> 27 </TD> <TD align="right"> 34 </TD> <TD align="right"> 60 </TD> <TD align="right"> 81 </TD> <TD align="right"> 76 </TD> <TD align="right"> 137 </TD> <TD align="right"> 122 </TD> <TD align="right"> 109 </TD> <TD align="right"> 84 </TD> </TR>
+  <TR> <TD> Atheist </TD> <TD align="right"> 12 </TD> <TD align="right"> 27 </TD> <TD align="right"> 37 </TD> <TD align="right"> 52 </TD> <TD align="right"> 35 </TD> <TD align="right"> 70 </TD> <TD align="right"> 73 </TD> <TD align="right"> 59 </TD> <TD align="right"> 74 </TD> </TR>
+  <TR> <TD> Buddhist </TD> <TD align="right"> 27 </TD> <TD align="right"> 21 </TD> <TD align="right"> 30 </TD> <TD align="right"> 34 </TD> <TD align="right"> 33 </TD> <TD align="right"> 58 </TD> <TD align="right"> 62 </TD> <TD align="right"> 39 </TD> <TD align="right"> 53 </TD> </TR>
+  <TR> <TD> Catholic </TD> <TD align="right"> 418 </TD> <TD align="right"> 617 </TD> <TD align="right"> 732 </TD> <TD align="right"> 670 </TD> <TD align="right"> 638 </TD> <TD align="right"> 1116 </TD> <TD align="right"> 949 </TD> <TD align="right"> 792 </TD> <TD align="right"> 633 </TD> </TR>
+   </TABLE>
+
+
+<p><a href="javascript:expandcollapse('solution1')">
+   [+/-] Solution
+ </a><br></p>
+<p><span class='posthidden' id='solution1'>
+Except for <code>religion</code>, the rest of the columns headers are actually values of a lurking variable <code>income</code>. This dataset violates the second rule of tidy data.
+</span></p>
+<p><strong>Tuberculosis Incidence</strong></p>
+<pre><code class="lang-r">tb &lt;- read.csv(
+  file = <span class="hljs-string">"http://stat405.had.co.nz/data/tb.csv"</span>,
+  header = <span class="hljs-literal">TRUE</span>, 
+  stringsAsFactors = <span class="hljs-literal">FALSE</span>
+)
+</code></pre>
+<p><!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+<!-- Mon Apr 14 06:15:22 2014 --></p>
+<TABLE style="width:90%;">
+<TR> <TH> iso2 </TH> <TH> year </TH> <TH> new_sp </TH> <TH> new_sp_m04 </TH> <TH> new_sp_m514 </TH> <TH> new_sp_m014 </TH> <TH> new_sp_m1524 </TH>  </TR>
+  <TR> <TD> ZW </TD> <TD align="right"> 2004 </TD> <TD align="right"> 14581 </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right"> 187 </TD> <TD align="right"> 833 </TD> </TR>
+  <TR> <TD> ZW </TD> <TD align="right"> 2005 </TD> <TD align="right"> 13155 </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right"> 210 </TD> <TD align="right"> 837 </TD> </TR>
+  <TR> <TD> ZW </TD> <TD align="right"> 2006 </TD> <TD align="right"> 12718 </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right"> 215 </TD> <TD align="right"> 736 </TD> </TR>
+  <TR> <TD> ZW </TD> <TD align="right"> 2007 </TD> <TD align="right"> 10583 </TD> <TD align="right"> 6 </TD> <TD align="right"> 132 </TD> <TD align="right"> 138 </TD> <TD align="right"> 500 </TD> </TR>
+  <TR> <TD> ZW </TD> <TD align="right"> 2008 </TD> <TD align="right"> 9830 </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right"> 127 </TD> <TD align="right"> 614 </TD> </TR>
+   </TABLE>
+
+
+<p><a href="javascript:expandcollapse('solution2')">
+   [+/-] Solution
+ </a><br></p>
+<p><span class='posthidden' id='solution2'>
+Except for <code>iso2</code> and <code>year</code>, the rest of the columns headers are actually values of a lurking variable, in fact combination of <strong>two</strong> lurking variables, <code>gender</code> and <code>age</code>.
+</span></p>
+<p><strong>Weather Data</strong></p>
+<pre><code class="lang-r">weather &lt;- read.delim(
+ file = <span class="hljs-string">"http://stat405.had.co.nz/data/weather.txt"</span>,
+ stringsAsFactors = <span class="hljs-literal">FALSE</span>
+)
+</code></pre>
+<p><!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+<!-- Mon Apr 14 06:15:22 2014 --></p>
+<TABLE style='width:75%;'>
+<TR> <TH> id </TH> <TH> year </TH> <TH> month </TH> <TH> element </TH> <TH> d1 </TH> <TH> d2 </TH> <TH> d3 </TH> <TH> d4 </TH> <TH> d5 </TH> <TH> d6 </TH> <TH> d7 </TH>  </TR>
+  <TR> <TD> MX000017004 </TD> <TD align="right"> 2010 </TD> <TD align="right"> 10 </TD> <TD> TMIN </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right"> 140 </TD> <TD align="right">  </TD> <TD align="right"> 129 </TD> </TR>
+  <TR> <TD> MX000017004 </TD> <TD align="right"> 2010 </TD> <TD align="right"> 11 </TD> <TD> TMAX </TD> <TD align="right">  </TD> <TD align="right"> 313 </TD> <TD align="right">  </TD> <TD align="right"> 272 </TD> <TD align="right"> 263 </TD> <TD align="right">  </TD> <TD align="right">  </TD> </TR>
+  <TR> <TD> MX000017004 </TD> <TD align="right"> 2010 </TD> <TD align="right"> 11 </TD> <TD> TMIN </TD> <TD align="right">  </TD> <TD align="right"> 163 </TD> <TD align="right">  </TD> <TD align="right"> 120 </TD> <TD align="right"> 79 </TD> <TD align="right">  </TD> <TD align="right">  </TD> </TR>
+  <TR> <TD> MX000017004 </TD> <TD align="right"> 2010 </TD> <TD align="right"> 12 </TD> <TD> TMAX </TD> <TD align="right"> 299 </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right"> 278 </TD> <TD align="right">  </TD> </TR>
+  <TR> <TD> MX000017004 </TD> <TD align="right"> 2010 </TD> <TD align="right"> 12 </TD> <TD> TMIN </TD> <TD align="right"> 138 </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right">  </TD> <TD align="right"> 105 </TD> <TD align="right">  </TD> </TR>
+   </TABLE>
+
+
+
+<p><a href="javascript:expandcollapse('solution3')">
+   [+/-] Solution
+ </a><br></p>
+<p><span class='posthidden' id='solution3'>
+This dataset seems to have two problems. First, it has variables in the rows in the column <code>element</code>. Second, it has a variable <code>d</code> in the column header spread across multiple columns.
+</span></p>
+<h3 id="causes-of-messiness">Causes of Messiness</h3>
+<ul>
+<li>Column headers are values, not variable names </li>
+<li>Multiple variables are stored in one column </li>
+<li>Variables are stored in both rows and columns </li>
+<li>Multiple types of experimental unit stored in the same table </li>
+<li>One type of experimental unit stored in  multiple tables</li>
+</ul>
+<style>
+  .posthidden {display:none} 
+  .postshown {display:inline}
+</style>
+
+<script type="text/Javascript"> 
+
+  function expandcollapse (postid) { 
+    whichpost = document.getElementById(postid); 
+
+     if (whichpost.className=="postshown") { 
+      whichpost.className="posthidden"; 
+     } 
+     else { 
+      whichpost.className="postshown"; 
+     } 
+  } 
+</script>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../explore/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../explore/reshape.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

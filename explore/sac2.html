@@ -1,0 +1,423 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Split Apply Combine 2 | Introduction to R</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="idocs">
+        <meta name="description" content="These are notes for an introductory R workshop I am teaching for Python Programmers.">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../visualize/README.html" />
+        
+        
+        <link rel="prev" href="../explore/sac.html" />
+        
+
+        <meta property="og:title" content="Split Apply Combine 2 | Introduction to R">
+        <meta property="og:site_name" content="Introduction to R">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/idocs">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="idocs/test1" data-level="2.5" data-basepath=".." data-revision="1397510917583">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/idocs/test1" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/idocs/test1/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/idocs/test1/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Introduction to R</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/idocs" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/idocs/test1/edit/master/explore/sac2.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="learn/README.html">
+                
+                <a href="../learn/README.html">
+                    <i class="fa fa-check"></i> <b>1.</b> Introduction to R
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="learn/structures.html">
+                            
+                            <a href="../learn/structures.html">
+                                <i class="fa fa-check"></i> <b>1.1.</b> Data Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="learn/subsetting.html">
+                            
+                            <a href="../learn/subsetting.html">
+                                <i class="fa fa-check"></i> <b>1.2.</b> Subsetting
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="learn/controls.html">
+                            
+                            <a href="../learn/controls.html">
+                                <i class="fa fa-check"></i> <b>1.3.</b> Control Structures
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4" data-path="learn/functions.html">
+                            
+                            <a href="../learn/functions.html">
+                                <i class="fa fa-check"></i> <b>1.4.</b> Functions
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5" data-path="learn/vectorization.html">
+                            
+                            <a href="../learn/vectorization.html">
+                                <i class="fa fa-check"></i> <b>1.5.</b> Vectorization
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="explore/README.html">
+                
+                <a href="../explore/README.html">
+                    <i class="fa fa-check"></i> <b>2.</b> Data Wrangling
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="explore/tidy.html">
+                            
+                            <a href="../explore/tidy.html">
+                                <i class="fa fa-check"></i> <b>2.1.</b> Tidy Data
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="explore/reshape.html">
+                            
+                            <a href="../explore/reshape.html">
+                                <i class="fa fa-check"></i> <b>2.2.</b> Reshape
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.3" data-path="explore/summarize.html">
+                            
+                            <a href="../explore/summarize.html">
+                                <i class="fa fa-check"></i> <b>2.3.</b> Summarize
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.4" data-path="explore/sac.html">
+                            
+                            <a href="../explore/sac.html">
+                                <i class="fa fa-check"></i> <b>2.4.</b> Split Apply Combine
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.5" data-path="explore/sac2.html">
+                            
+                            <a href="../explore/sac2.html">
+                                <i class="fa fa-check"></i> <b>2.5.</b> Split Apply Combine 2
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="visualize/README.html">
+                
+                <a href="../visualize/README.html">
+                    <i class="fa fa-check"></i> <b>3.</b> Data Visualization
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="visualize/base_graphics.html">
+                            
+                            <a href="../visualize/base_graphics.html">
+                                <i class="fa fa-check"></i> <b>3.1.</b> Base Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="visualize/ggplot2.html">
+                            
+                            <a href="../visualize/ggplot2.html">
+                                <i class="fa fa-check"></i> <b>3.2.</b> Grammar of Graphics
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="visualize/interactive.html">
+                            
+                            <a href="../visualize/interactive.html">
+                                <i class="fa fa-check"></i> <b>3.3.</b> Interactive Graphics
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 75%;min-width: 68.75%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../learn/README.html" title="Introduction to R" class="chapter done new-chapter" data-progress="1" style="left: 6.25%;"></a>
+    
+        <a href="../learn/structures.html" title="Data Structures" class="chapter done " data-progress="1.1" style="left: 12.5%;"></a>
+    
+        <a href="../learn/subsetting.html" title="Subsetting" class="chapter done " data-progress="1.2" style="left: 18.75%;"></a>
+    
+        <a href="../learn/controls.html" title="Control Structures" class="chapter done " data-progress="1.3" style="left: 25%;"></a>
+    
+        <a href="../learn/functions.html" title="Functions" class="chapter done " data-progress="1.4" style="left: 31.25%;"></a>
+    
+        <a href="../learn/vectorization.html" title="Vectorization" class="chapter done " data-progress="1.5" style="left: 37.5%;"></a>
+    
+        <a href="../explore/README.html" title="Data Wrangling" class="chapter done new-chapter" data-progress="2" style="left: 43.75%;"></a>
+    
+        <a href="../explore/tidy.html" title="Tidy Data" class="chapter done " data-progress="2.1" style="left: 50%;"></a>
+    
+        <a href="../explore/reshape.html" title="Reshape" class="chapter done " data-progress="2.2" style="left: 56.25%;"></a>
+    
+        <a href="../explore/summarize.html" title="Summarize" class="chapter done " data-progress="2.3" style="left: 62.5%;"></a>
+    
+        <a href="../explore/sac.html" title="Split Apply Combine" class="chapter done " data-progress="2.4" style="left: 68.75%;"></a>
+    
+        <a href="../explore/sac2.html" title="Split Apply Combine 2" class="chapter done " data-progress="2.5" style="left: 75%;"></a>
+    
+        <a href="../visualize/README.html" title="Data Visualization" class="chapter  new-chapter" data-progress="3" style="left: 81.25%;"></a>
+    
+        <a href="../visualize/base_graphics.html" title="Base Graphics" class="chapter  " data-progress="3.1" style="left: 87.5%;"></a>
+    
+        <a href="../visualize/ggplot2.html" title="Grammar of Graphics" class="chapter  " data-progress="3.2" style="left: 93.75%;"></a>
+    
+        <a href="../visualize/interactive.html" title="Interactive Graphics" class="chapter  " data-progress="3.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_5">
+                    
+                        <h1 id="split-apply-combine-ii">Split-Apply-Combine: II</h1>
+<p>Recall that the core idea behind the <code>split-apply-combine</code> strategy is to </p>
+<ul>
+<li>split up the original data (this can be any format includng data.frames, lists, arrays, matrics, vectors),</li>
+<li>apply existing or custom functions to it, and </li>
+<li>combine the results in the same or different format.</li>
+</ul>
+<p>In this lesson, we will explore three R packages that make it easy to apply this strategy using a simple, unified interface</p>
+<h2 id="plyr">plyr</h2>
+<p>The first package we will take a look at is the <code>plyr</code> package by Hadley Wickham. The basic philosophy of <code>plyr</code> is that to carry out any <code>split-apply-combine</code> operation, a user only needs to specify the following details</p>
+<ol>
+<li>The data structure of the input.</li>
+<li>The dataset being worked on</li>
+<li>The variable to split the dataset on.</li>
+<li>The function to applyto each split piece.</li>
+<li>The data structure of the output to combine pieces.</li>
+</ol>
+<p>Accordingly, <code>plyr</code> synthesizes the entire <code>*apply</code> family into one consistent matrix of functions, a really useful toolkit!</p>
+<p><img src="http://nicercode.github.io/2014-02-13-UNSW/lessons/40-repeating/full_apply_suite.png" width=80%></img></p>
+<style>
+p{text-align: justify;}
+</style>
+
+<p>Let us revisit our earlier problem of figuring out the most popular <code>name</code> by <code>sex</code> between the years 2000 and 2008. We are passing a data frame in and want to get a data frame out. So we pick the <code>ddply</code> function, where the first <code>d</code> stands for data frame input, and the second <code>d</code> stands for data frame output. </p>
+<p>The rest of the arguments look eerily similar to what we used in the <code>aggregate</code> function call, as should be, since these are the primitives in terms of which we can specify this data analysis problem.</p>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(plyr)
+result &lt;- ddply(
+  .data = subset(bnames2_b, year &gt;= <span class="hljs-number">2000</span>),
+  .variables = c(<span class="hljs-string">'sex'</span>, <span class="hljs-string">'name'</span>),
+  .fun = <span class="hljs-keyword">function</span>(p){
+    summarize(p, tot = sum(tot))
+  }
+)
+</code></pre>
+<p>The <code>plyr</code> package offers a lot of syntactic sugar that allows one to write really concise code. For example, the previous piece of code can be rewritten as</p>
+<pre><code class="lang-r">resultB &lt;- ddply(subset(bnames2_b, year &gt;= <span class="hljs-number">2000</span>), 
+  .(sex, name), summarize, tot = sum(tot)
+)
+</code></pre>
+<p>It works by passing the argument <code>tot = sum(tot)</code> to the <code>summarize</code> function, thereby allowing one to skip defining a separate anonymous function.</p>
+<p>In addition to syntactic sugar, the <code>plyr</code> package provides some nice bells and whistles to run your analysis in <code>parallel</code> (you will need to have the <code>foreach</code> package installed) and also display a <code>progress bar</code>. Type <code>?ddply</code> to explore more options from the documentation.</p>
+<p>Let us consider another interesting problem, this time from the <code>baseball</code> dataset. Suppose, we want to run a linear regression of <code>rbi</code> (runs batted in) across a player&#39;s carrer in terms of <code>years</code>.</p>
+<pre><code class="lang-r">head(baseball[,<span class="hljs-number">1</span>:<span class="hljs-number">16</span>])
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##            id year stint team lg  g  ab  r  h X2b X3b hr rbi sb cs bb</span>
+<span class="hljs-preprocessor">## 4   ansonca01 1871     1  RC1    25 120 29 39  11   3  0  16  6  2  2</span>
+<span class="hljs-preprocessor">## 44  forceda01 1871     1  WS3    32 162 45 45   9   4  0  29  8  0  4</span>
+<span class="hljs-preprocessor">## 68  mathebo01 1871     1  FW1    19  89 15 24   3   1  0  10  2  1  2</span>
+<span class="hljs-preprocessor">## 99  startjo01 1871     1  NY2    33 161 35 58   5   1  1  34  4  2  3</span>
+<span class="hljs-preprocessor">## 102 suttoez01 1871     1  CL1    29 128 35 45   3   7  3  23  3  1  1</span>
+<span class="hljs-preprocessor">## 106 whitede01 1871     1  CL1    29 146 40 47   6   5  1  21  2  2  4</span>
+</code></pre><p>Let us start by writing a simple function that would take a data frame consisting of a subset for a specific player and then return the regression model.</p>
+<pre><code class="lang-r">rbi_vs_year &lt;- <span class="hljs-keyword">function</span>(df){
+  df &lt;- mutate(df, year = year - min(year))
+  lm(rbi ~ year, data = df)
+}
+</code></pre>
+<p>Note that since the model objects are not data frames, it is appropriate to return a <code>list</code> as output. So, we use the <code>dlply</code> function.</p>
+<pre><code class="lang-r">models &lt;- dlply(baseball, .(id), rbi_vs_year)
+models[[<span class="hljs-number">1</span>]]
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## Call:</span>
+<span class="hljs-preprocessor">## lm(formula = rbi ~ year, data = df)</span>
+<span class="hljs-preprocessor">## </span>
+<span class="hljs-preprocessor">## Coefficients:</span>
+<span class="hljs-preprocessor">## (Intercept)         year  </span>
+<span class="hljs-preprocessor">##      118.92        -1.73</span>
+</code></pre><p>We can extract the regression coefficients for each model object, using the <code>coef</code> function. So</p>
+<pre><code class="lang-r">coef(models[[<span class="hljs-number">1</span>]])
+</code></pre>
+<pre><code><span class="hljs-preprocessor">## (Intercept)        year </span>
+<span class="hljs-preprocessor">##     118.924      -1.732</span>
+</code></pre><p>What if we wanted a <code>data.frame</code> of coefficients? Once again the key is to note that we start with a <strong>l</strong>ist of model objects and want an <strong>d</strong>ataframe as output.</p>
+<pre><code class="lang-r">coefs &lt;- ldply(models, coef)
+qplot(`(Intercept)`, year, data = coefs)
+</code></pre>
+<p><img src="figure/baseball-coefs.png" title="plot of chunk baseball-coefs" alt="plot of chunk baseball-coefs" style="display: block; margin: auto;" /></p>
+<p>The <code>plyr</code> package is very feature rich and I would encourage you to explore more of it. The one flip side to using <code>plyr</code> is that it can be very slow on large data sets. In such situations, you have the option of using two other R packages <code>dplyr</code>, the anointed successor of <code>plyr</code> and  <code>data.table</code>.</p>
+<h2 id="dplyr">dplyr</h2>
+<p>The <code>dplyr</code> package is a next generation implementation of <code>plyr</code>. According to the author Hadley Wickham,</p>
+<blockquote>
+<p>dplyr is a new package which provides a set of tools for efficiently manipulating datasets in R. dplyr is the next iteration of plyr, focussing on only data frames. dplyr is faster, has a more consistent API.</p>
+</blockquote>
+<p>Some of the nice features of <code>dplyr</code> are:</p>
+<ol>
+<li>Speed: All underlying manipulations are carried out in C++ using <code>Rcpp</code>.</li>
+<li>Consistentcy: All tabular data is treated similarly allowing one to work with <code>data frames</code> and <code>databases</code> in very much the same way. </li>
+<li>Simplicity</li>
+</ol>
+<p>Let us take an example involving the <code>Batting</code> dataset from the <code>Lahman</code> package. We are interested in computing the total number of games played by a player, arranged in decreasing order of totals.</p>
+<p>In <code>plyr</code>, we would write the following code</p>
+<pre><code class="lang-r">games &lt;- ddply(Batting, .(playerID), summarize, total = sum(G))
+head(arrange(games, desc(total)), <span class="hljs-number">5</span>)
+</code></pre>
+<pre><code><span class="hljs-preprocessor">##    playerID total</span>
+<span class="hljs-preprocessor">## 1  rosepe01  3562</span>
+<span class="hljs-preprocessor">## 2 yastrca01  3308</span>
+<span class="hljs-preprocessor">## 3 aaronha01  3298</span>
+<span class="hljs-preprocessor">## 4 henderi01  3081</span>
+<span class="hljs-preprocessor">## 5  cobbty01  3035</span>
+</code></pre><p>The same piece of code can be rewritten in <code>dplyr</code>, using its version of the chain operator, <code>%.%</code>:</p>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(dplyr)
+games_d &lt;- Batting %.%
+  group_by(playerID) %.%
+  summarize(total = sum(G)) %.%
+  arrange(desc(total)) %.%
+  head(<span class="hljs-number">5</span>)
+</code></pre>
+<p>This should be a natural way of writing code for those of you familiar with <code>pandas</code>.</p>
+<p>If you ran both pieces of code, you will notice that <code>dplyr</code> is significantly faster than <code>plyr</code>.</p>
+<h2 id="data-table">data.table</h2>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(data.table)
+Batting_DT &lt;- data.table(Batting)
+games_dt &lt;- Batting_DT[,
+  list(total = sum(G)),
+  <span class="hljs-string">"playerID"</span>
+][
+  head(order(-total), <span class="hljs-number">5</span>),
+]
+</code></pre>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../explore/sac.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../visualize/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>

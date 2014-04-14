@@ -1,0 +1,157 @@
+# Tidy Data
+
+```{r setup, cache = F, echo = F}
+library(knitr)
+opts_chunk$set(tidy = F)
+library(xtable)
+options(xtable.type = 'html', xtable.include.rownames = FALSE)
+```
+
+
+__Question:__ Consider the following data below. How many variables does this dataset contain?
+
+```{r tidy-data-1, echo = F}
+dat <- data.frame(
+  males = c(injured = 4, uninjured = 2), 
+  females = c(injured = 1, uninjured = 5)
+)
+```
+
+```{r tidy-data-2, echo = F, results = 'asis', comment = NA}
+
+print(xtable(dat, digits = 0), html.table.attributes = "style='width:50%;'")
+```
+
+<a href="javascript:expandcollapse('solution1')">
+   [+/-] Solution
+ </a><br>
+
+<span class='posthidden' id='solution1'>
+The way the table is presented, it seems like there are only two variables. However, the correct answer is __3__. The variables are `injured?`, `count` and `gender`. 
+</span>
+
+> Raw data in the real-world is often `untidy` and poorly formatted. Furthermore, it may lack appropriate details of the study. Correcting data in place can be a dangerous exercise since the original raw data would get overwritten and there would be no way to audit this process or recover from mistakes made during this time. A good data practice would be to maintain the original data, but use a programmatic script to clean it, fix mistakes and save that cleaned dataset for further analysis. 
+
+
+### What is Tidy Data?
+
+A dataset is said to be tidy if it satisfies the following conditions
+
+1. observations are in rows
+2. variables are in columns
+3. contained in a single dataset.
+
+Tidy data makes it easy to carry out data analysis.
+
+### Explore Messy Data
+
+Let us explore some common causes of messiness by inspecting a few datasets. 
+
+__Income Distribution by Religion__
+
+
+Our first dataset is based on a survey done by Pew Research that examines the relationship between [income and religious affiliation](http://www.pewforum.org/2009/01/30/income-distribution-within-us-religious-groups/). 
+
+Read the dataset into your R session and inspect the first few rows to assess if it is tidy.
+
+```{r tidy-data-pew}
+pew <- read.delim(
+  file = "http://stat405.had.co.nz/data/pew.txt",
+  header = TRUE,
+  stringsAsFactors = FALSE,
+  check.names = F
+)
+```
+
+```{r echo = F, results = 'asis', comment = NA}
+xtable(pew[1:4,1:10], digits = 0)
+```
+
+<a href="javascript:expandcollapse('solution1')">
+   [+/-] Solution
+ </a><br>
+
+<span class='posthidden' id='solution1'>
+Except for `religion`, the rest of the columns headers are actually values of a lurking variable `income`. This dataset violates the second rule of tidy data.
+</span>
+
+__Tuberculosis Incidence__
+
+```{r tidy-data-tb}
+tb <- read.csv(
+  file = "http://stat405.had.co.nz/data/tb.csv",
+  header = TRUE, 
+  stringsAsFactors = FALSE
+)
+```
+
+
+```{r echo = F, results = 'asis', comment = NA}
+print(xtable(tail(tb[,1:7], 5), digits = 0), 
+  html.table.attributes='style="width:90%;"'
+)
+```
+
+<a href="javascript:expandcollapse('solution2')">
+   [+/-] Solution
+ </a><br>
+
+<span class='posthidden' id='solution2'>
+Except for `iso2` and `year`, the rest of the columns headers are actually values of a lurking variable, in fact combination of __two__ lurking variables, `gender` and `age`.
+</span>
+
+__Weather Data__
+
+```{r tidy-data-weather}
+weather <- read.delim(
+ file = "http://stat405.had.co.nz/data/weather.txt",
+ stringsAsFactors = FALSE
+)
+```
+
+```{r echo = F, results = 'asis', comment = NA}
+xtable(tail(weather[,1:11], 5), digits = 0)  
+```
+
+
+<a href="javascript:expandcollapse('solution3')">
+   [+/-] Solution
+</a><br>
+
+<span class='posthidden' id='solution3'>
+This dataset seems to have two problems. First, it has variables in the rows in the column `element`. Second, it has a variable `d` in the column header spread across multiple columns.
+</span>
+
+
+
+
+
+
+### Causes of Messiness
+
+- Column headers are values, not variable names 
+- Multiple variables are stored in one column 
+- Variables are stored in both rows and columns 
+- Multiple types of experimental unit stored in the same table 
+- One type of experimental unit stored in  multiple tables
+
+
+
+<style>
+  .posthidden {display:none} 
+  .postshown {display:inline}
+</style>
+
+<script type="text/Javascript"> 
+
+  function expandcollapse (postid) { 
+    whichpost = document.getElementById(postid); 
+   
+     if (whichpost.className=="postshown") { 
+      whichpost.className="posthidden"; 
+     } 
+     else { 
+      whichpost.className="postshown"; 
+     } 
+  } 
+</script>
