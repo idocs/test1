@@ -11,25 +11,25 @@ Common ones include:
 * next
 * return
 
-We don't use these while working with R interactively but rather inside functions. 
+We don't use these while working with R interactively but rather inside functions.
 
 ## If
 
 ```{r, eval = FALSE}
 if(condition) {
-    # do something 
-} else { 
+    # do something
+} else {
     # do something else
 }
 ```
-e.g. 
+e.g.
 
 
 
 ```{r, eval = FALSE}
 x <- 1:15
 if(sample(x, 1) <= 10) {
-    print("x is less than 10") 
+    print("x is less than 10")
 } else {
     print("x is greater than 10")
 }
@@ -73,7 +73,7 @@ for(i in 1:10) {
 x <- c("apples", "oranges", "bananas", "strawberries")
 
 for(i in x) {
-    print(x[i])
+    print(i)
 }
 
 for(i in 1:4) {
@@ -107,7 +107,7 @@ while(i < 10) {
   print(i)
   i <- i + 1
 }
-```  
+```
 
 Be sure there is a way to exit out of a `while` loop.
 
@@ -131,7 +131,7 @@ repeat {
 for(i in 1:20) {
   if(i %%2 ==1) {
     next
-  } else { 
+  } else {
     print(i)
   }
 }
